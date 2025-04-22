@@ -1,58 +1,53 @@
 import { useState, useEffect } from 'react'; 
-import { Menu } from 'lucide-react';
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
+import { Menu } from 'lucide-react'; 
+import { 
+  NavigationMenu, 
+  NavigationMenuContent, 
+  NavigationMenuItem, 
+  NavigationMenuList, 
+  NavigationMenuTrigger, 
+} from "@/components/ui/navigation-menu"; 
 import { Link, useLocation } from 'react-router-dom';
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+const Navbar = () => { 
+  const [isOpen, setIsOpen] = useState(false); 
+  const [scrolled, setScrolled] = useState(false); 
   const location = useLocation();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+  useEffect(() => { 
+    const handleScroll = () => { 
+      setScrolled(window.scrollY > 50); 
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll); 
+    return () => window.removeEventListener('scroll', handleScroll); 
   }, []);
 
   const isActive = (path) => location.pathname === path ? 'border-b-2 border-black' : '';
 
-  const handleLinkClick = () => {
-    setIsOpen(false); // Cierra el menú móvil al hacer clic en un enlace
+  const handleLinkClick = () => { 
+    setIsOpen(false); // Cierra el menú móvil al hacer clic en un enlace 
   };
 
-  // Función para manejar el desplazamiento suave al hacer clic
-  const handleSmoothScroll = (e) => {
-    e.preventDefault();
-    const target = document.querySelector(e.target.getAttribute('href'));
-    target.scrollIntoView({ behavior: 'smooth' });
-  };
+  return ( 
+    <nav className={`fixed top-0 left-0 w-full z-50 bg-white transition-all duration-300 ${scrolled ? 'shadow-md py-1' : 'py-2'}`}>
 
-  return (
-    <nav className={`fixed top-0 left-0 w-full z-50 bg-white transition-all duration-300 ${scrolled ? 'shadow-md py-2' : 'py-4'}`}>
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center text-black text-lg">
-        <Link to="/" className="flex items-center space-x-3" onClick={handleLinkClick}>
-          <img src="./imagenes/logo.jpeg" alt="ADEKA Logo" className="h-16 w-auto mr-4" />
+        <Link to="/" className="flex items-center space-x-2" onClick={handleLinkClick}>
+          <img src="./imagenes/logo3.JPG" alt="ADEKA Logo" className="h-20 w-auto mr-2" />
           <span className="text-2xl font-bold text-black">ADEKA</span>
         </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
-          <a
-            href="#about-us" 
-            onClick={handleSmoothScroll} // Llamamos la función de desplazamiento suave
-            className={`text-black text-lg font-medium hover:text-adeka-gold transition-colors ${isActive('/about-us')}`}
+          {/* Empresa Link */}
+          <Link
+            to="/empresa"
+            onClick={handleLinkClick}
+            className={`text-lg text-black font-medium hover:text-adeka-gold transition-colors ${isActive('/empresa')}`}
           >
             Empresa
-          </a>
+          </Link>
 
           {/* Servicios dropdown */}
           <NavigationMenu>
@@ -65,19 +60,19 @@ const Navbar = () => {
                   <div className="p-4 w-[220px] space-y-2">
                     <Link 
                       to="/servicios-auxiliares" 
-                      className={`block px-4 py-2 text-sm text-black hover:bg-gray-100 rounded-md ${isActive('/servicios-auxiliares')}`}
+                      className={`block px-4 py-2 text-lg text-black hover:bg-gray-100 rounded-md ${isActive('/servicios-auxiliares')}`}
                     >
                       Servicios Auxiliares de Control
                     </Link>
                     <Link 
                       to="/mantenimiento-comunidades" 
-                      className={`block px-4 py-2 text-sm text-black hover:bg-gray-100 rounded-md ${isActive('/mantenimiento-comunidades')}`}
+                      className={`block px-4 py-2 text-lg text-black hover:bg-gray-100 rounded-md ${isActive('/mantenimiento-comunidades')}`}
                     >
                       Mantenimiento de Comunidades
                     </Link>
                     <Link 
                       to="/jardineria-servicios" 
-                      className={`block px-4 py-2 text-sm text-black hover:bg-gray-100 rounded-md ${isActive('/jardineria-servicios')}`}
+                      className={`block px-4 py-2 text-lg text-black hover:bg-gray-100 rounded-md ${isActive('/jardineria-servicios')}`}
                     >
                       Jardinería Profesional
                     </Link>
@@ -89,18 +84,18 @@ const Navbar = () => {
 
           <Link
             to="/nuestro-compromiso"
-            className={`text-black text-lg font-medium hover:text-adeka-gold transition-colors ${isActive('/nuestro-compromiso')}`}
+            className={`text-lg text-black font-medium hover:text-adeka-gold transition-colors ${isActive('/nuestro-compromiso')}`}
           >
             Nuestro Compromiso
           </Link>
-          
+
           <Link
             to="/trabaja-con-nosotros"
-            className={`text-black text-lg font-medium hover:text-adeka-gold transition-colors ${isActive('/trabaja-con-nosotros')}`}
+            className={`text-lg text-black font-medium hover:text-adeka-gold transition-colors ${isActive('/trabaja-con-nosotros')}`}
           >
             Trabaja con Nosotros
           </Link>
-          
+
           <Link
             to="/solicitar-presupuesto"
             className={`bg-adeka-gold text-white px-4 py-2 rounded-md hover:bg-adeka-gold/90 transition-colors text-lg font-medium ${isActive('/solicitar-presupuesto')}`}
@@ -124,35 +119,35 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-white shadow-lg py-4 px-6 absolute w-full animate-fade-in">
           <div className="flex flex-col space-y-4">
-                  <a
-          href="#about-us" 
-          onClick={(e) => {
-            handleSmoothScroll(e);  // Desplazamiento suave
-            handleLinkClick();       // Cierra el menú móvil
-          }}
-          className={`text-black text-lg font-medium hover:text-adeka-gold transition-colors ${isActive('/about-us')}`}
-        />
+            {/* Empresa Link in Mobile Menu */}
+            <Link
+              to="/empresa"
+              onClick={handleLinkClick}
+              className={`text-lg text-black font-medium hover:text-adeka-gold transition-colors ${isActive('/empresa')}`}
+            >
+              Empresa
+            </Link>
 
             <div className="space-y-2">
               <div className="font-medium text-black text-lg">Servicios</div>
               <Link 
                 to="/servicios-auxiliares" 
                 onClick={handleLinkClick}
-                className={`block pl-4 text-sm text-black hover:text-adeka-gold ${isActive('/servicios-auxiliares')}`}
+                className={`block pl-4 text-lg text-black hover:text-adeka-gold ${isActive('/servicios-auxiliares')}`}
               >
                 Servicios Auxiliares de Control
               </Link>
               <Link 
                 to="/mantenimiento-comunidades" 
                 onClick={handleLinkClick}
-                className={`block pl-4 text-sm text-black hover:text-adeka-gold ${isActive('/mantenimiento-comunidades')}`}
+                className={`block pl-4 text-lg text-black hover:text-adeka-gold ${isActive('/mantenimiento-comunidades')}`}
               >
                 Mantenimiento de Comunidades
               </Link>
               <Link 
                 to="/jardineria-servicios" 
                 onClick={handleLinkClick}
-                className={`block pl-4 text-sm text-black hover:text-adeka-gold ${isActive('/jardineria-servicios')}`}
+                className={`block pl-4 text-lg text-black hover:text-adeka-gold ${isActive('/jardineria-servicios')}`}
               >
                 Jardinería Profesional
               </Link>
@@ -165,7 +160,7 @@ const Navbar = () => {
             >
               Nuestro Compromiso
             </Link>
-            
+
             <Link
               to="/trabaja-con-nosotros"
               onClick={handleLinkClick}

@@ -1,14 +1,20 @@
-
-import { Mail, Phone } from "lucide-react";
+import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Mail, Phone } from "lucide-react";
+import { Link } from 'react-router-dom';
 
 const SolicitarPresupuesto = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic would go here
+    // Lógica para enviar el formulario aquí
+  };
+
+  const openPrivacyPolicy = (e) => {
+    e.preventDefault(); // Prevenir el comportamiento por defecto de Link
+    window.open('/politica-privacidad', '_blank'); // Abre la página en una nueva ventana o pestaña
   };
 
   return (
@@ -53,7 +59,11 @@ const SolicitarPresupuesto = () => {
                 <Checkbox id="privacidad" required />
                 <label htmlFor="privacidad" className="text-sm text-gray-600">
                   He leído y acepto la{" "}
-                  <a href="/privacidad" className="text-adeka-gold hover:underline">
+                  <a 
+                    href="/privacidad" 
+                    onClick={openPrivacyPolicy} 
+                    className="text-adeka-gold hover:underline"
+                  >
                     política de privacidad
                   </a>
                 </label>

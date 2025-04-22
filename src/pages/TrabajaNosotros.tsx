@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -6,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/components/ui/use-toast";
 import { Briefcase, Upload } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const TrabajaNosotros = () => {
   const { toast } = useToast();
@@ -26,6 +26,10 @@ const TrabajaNosotros = () => {
     // Form submission logic would go here
   };
 
+  const openPrivacyPolicy = () => {
+    window.open("/politica-privacidad", "_blank");
+  };
+
   return (
     <div className="pt-20 min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-16">
@@ -36,7 +40,7 @@ const TrabajaNosotros = () => {
               Trabaja con Nosotros
             </h1>
             <p className="text-lg text-gray-600 mb-2">
-              Queremos que formes parte de EUROTEX AUXILIARES.
+              Queremos que formes parte de Areka.
             </p>
             <p className="text-lg text-gray-600 mb-2">
               ¡Únete a nuestro equipo!
@@ -134,9 +138,13 @@ const TrabajaNosotros = () => {
                 />
                 <label htmlFor="privacidad" className="text-sm text-gray-600">
                   He leído y acepto la{" "}
-                  <a href="/privacidad" className="text-adeka-gold hover:underline">
+                  <button
+                    type="button"
+                    onClick={openPrivacyPolicy}
+                    className="text-adeka-gold hover:underline"
+                  >
                     política de privacidad
-                  </a>
+                  </button>
                 </label>
               </div>
 
