@@ -3,7 +3,7 @@ import { Leaf, Flower, Scissors, Sprout } from 'lucide-react';
 
 const JardineriaServicios = () => {
   return (
-    <div className="pt-20 min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50">
       <div 
         className="relative h-48 mb-12 bg-adeka-black"
         style={{

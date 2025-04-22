@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from 'react'; 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -79,11 +79,11 @@ const SolicitarPresupuesto = () => {
               <div className="space-y-2">
                 <p className="flex items-center gap-2">
                   <Mail className="text-adeka-gold" size={20} />
-                  <span>Email: eurotex@eurotex-auxiliares.net</span>
+                  <span>Email: informacionadeka@gmail.com</span>
                 </p>
                 <p className="flex items-center gap-2">
                   <Phone className="text-adeka-gold" size={20} />
-                  <span>Teléfono: 91 832 00 96</span>
+                  <span>Teléfono: 669.003.528</span>
                 </p>
                 <p className="flex items-center gap-2">
                   <svg
@@ -105,7 +105,7 @@ const SolicitarPresupuesto = () => {
                       d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                     />
                   </svg>
-                  <span>Oficina: C/ Hierro, 4-E, 28045 Madrid</span>
+                  <span>Oficina: C/Garrotín Nº-3 Bj Coria del rio, (Sevilla)</span>
                 </p>
               </div>
             </div>

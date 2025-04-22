@@ -1,5 +1,5 @@
-
 import { ArrowDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const scrollToServices = () => {
@@ -31,12 +31,12 @@ const Hero = () => {
             Comprometidos con la seguridad, el orden y el bienestar de su comunidad o evento
           </p>
           <div className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
-            <button 
-              onClick={scrollToServices}
-              className="bg-adeka-gold hover:bg-adeka-gold/90 text-white font-bold py-3 px-6 rounded-md shadow-lg transform transition-all duration-300 hover:scale-105"
+            <Link
+              to="/solicitar-presupuesto"
+              className="bg-adeka-gold hover:bg-adeka-gold/90 text-white font-bold py-3 px-6 rounded-md shadow-lg transform transition-all duration-300 hover:scale-105 inline-block"
             >
-              Pidenos presupuesto sin compromiso
-            </button>
+              Pídenos presupuesto sin compromiso
+            </Link>
           </div>
         </div>
       </div>

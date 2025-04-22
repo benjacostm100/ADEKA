@@ -3,7 +3,7 @@ import { Shield, User, Calendar } from 'lucide-react';
 
 const ServiciosAuxiliares = () => {
   return (
-    <div className="pt-20 min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50">
       <div 
         className="relative h-48 mb-12 bg-adeka-black"
         style={{
