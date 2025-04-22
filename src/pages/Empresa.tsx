@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Empresa = () => {
   return (
-    <div className="container mx-auto px-4 md:px-6 py-16 pt-32 bg-white"> {/* Aumenté pt-24 a pt-32 */}
+    <div className="container mx-auto px-4 md:px-6 bg-white"> {/* Aumenté pt-24 a pt-32 */}
       <motion.h2
         className="text-3xl font-bold text-center text-adeka-darkBlue mb-12"
         initial={{ opacity: 0, y: -30 }}

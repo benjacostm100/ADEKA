@@ -16,20 +16,27 @@ import TrabajaNosotros from "./pages/TrabajaNosotros";
 import AvisoLegal from "./pages/AvisoLegal";
 import PoliticaSeguridad from "./pages/PoliticaSeguridad";
 import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
-import Empresa from "./pages/Empresa"; // Importa el componente Empresa
-import { useEffect } from "react";  // Importamos useEffect
+import Empresa from "./pages/Empresa";
+import { useEffect } from "react";
 
 const queryClient = new QueryClient();
 
 const ScrollToTop = () => {
   const location = useLocation();
-
   useEffect(() => {
-    // Esto hará scroll hasta la parte superior cada vez que cambie la ruta
     window.scrollTo(0, 0);
-  }, [location]); // Dependencia de location, se ejecutará cada vez que cambie la ruta
+  }, [location]);
+  return null;
+};
 
-  return null; // Este componente no renderiza nada, solo ejecuta el efecto
+const MainContent = ({ children }: { children: React.ReactNode }) => {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+  return (
+    <main className={`flex-grow px-4 ${isHome ? "" : "pt-32"}`}>
+      {children}
+    </main>
+  );
 };
 
 const App = () => (
@@ -38,11 +45,10 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <ScrollToTop /> {/* Agregamos el componente ScrollToTop */}
+        <ScrollToTop />
         <div className="flex flex-col min-h-screen">
           <Navbar />
-          <main className="flex-grow pt-32 px-4">
-
+          <MainContent>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/servicios-auxiliares" element={<ServiciosAuxiliares />} />
@@ -54,10 +60,10 @@ const App = () => (
               <Route path="/aviso-legal" element={<AvisoLegal />} />
               <Route path="/politica-seguridad" element={<PoliticaSeguridad />} />
               <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />
-              <Route path="/empresa" element={<Empresa />} /> {/* Añadimos la ruta para Empresa */}
+              <Route path="/empresa" element={<Empresa />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
-          </main>
+          </MainContent>
           <Footer />
         </div>
       </BrowserRouter>

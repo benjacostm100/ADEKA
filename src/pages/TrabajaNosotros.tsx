@@ -31,8 +31,8 @@ const TrabajaNosotros = () => {
   };
 
   return (
-    <div className="pt-20 min-h-screen bg-gray-50">
-      <div className="container mx-auto px-4 py-16">
+    <div className="min-h-screen bg-gray-50">
+      <div className="container mx-auto px-4 py-8">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-8">
             <Briefcase className="mx-auto h-12 w-12 text-adeka-gold" />
