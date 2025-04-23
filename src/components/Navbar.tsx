@@ -168,13 +168,6 @@ const Navbar = () => {
               Trabaja con Nosotros
             </Link>
 
-            <Link
-              to="/solicitar-presupuesto"
-              onClick={handleLinkClick}
-              className={`bg-adeka-gold text-white px-4 py-2 rounded-md hover:bg-adeka-gold/90 transition-colors text-center text-lg ${isActive('/solicitar-presupuesto')}`}
-            >
-              Solicitar Presupuesto
-            </Link>
           </div>
         </div>
       )}

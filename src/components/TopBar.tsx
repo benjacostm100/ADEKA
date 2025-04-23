@@ -14,7 +14,7 @@ const TopBar = () => {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full bg-gradient-to-r from-black to-gray-900 text-white text-sm py-3 px-4 flex justify-between items-center z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full bg-gradient-to-r from-black to-gray-600 text-white text-sm py-3 px-16 flex justify-between items-center z-50 transition-all duration-300 ${
         scrolled ? "opacity-0 translate-y-[-100%]" : "opacity-100 translate-y-0"
       }`}
     >
@@ -26,7 +26,7 @@ const TopBar = () => {
         href="https://wa.me/34654321987"
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-white text-black font-semibold px-4 py-1 rounded-md hover:bg-gray-200 transition-colors text-sm"
+        className="bg-black text-white font-bold px-4 py-1 hover:bg-gray-300 hover:text-black transition-colors text-sm "
       >
         Contáctanos
       </a>
