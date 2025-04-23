@@ -10,7 +10,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative h-screen flex items-center">
+    <section id="home" className="pt-36 relative h-screen flex items-center">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 bg-black">
         <img
@@ -24,12 +24,12 @@ const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-4 md:px-6 z-10">
         <div className="max-w-3xl">
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-8 animate-fade-in " style={{ animationDelay: '0.2s' }}>
             Especialistas en Servicios Auxiliares y Mantenimiento
           </h1>
           <p className="text-lg md:text-xl text-adeka-silver mb-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            Comprometidos con la seguridad, el orden y el bienestar de su comunidad o evento
-          </p>
+  <strong>Comprometidos</strong> con la seguridad, el orden y el bienestar de su comunidad o evento. <br />  <strong>Ofrecemos</strong> soluciones eficaces y personalizadas para cubrir todas sus necesidades de manera profesional y confiable.
+</p>
           <div className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
             <Link
               to="/solicitar-presupuesto"
