@@ -65,7 +65,7 @@ const NuestroCompromiso = () => {
           {/* Imagen a la derecha (1/3 de ancho) */}
 <div className="w-full md:w-1/3 flex justify-center mt-32">
   <img
-    src="/imagenes/compromiso3.jpg"
+    src="/imagenes/compromiso4.jpg"
     alt="Compromiso ADEKA"
     className="w-full h-dvh object-cover rounded-lg shadow-lg"
   />

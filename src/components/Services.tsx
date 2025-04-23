@@ -30,7 +30,7 @@ const AboutUs = () => {
       transition={{ duration: 0.6, delay: 0.2 }}
     >
       <img
-        src="/imagenes/sobre_nosotros.jpg"
+        src="/imagenes/inicio.jpg"
         alt="Sobre ADEKA"
         className="w-full h-auto object-cover rounded-lg shadow-lg"
       />

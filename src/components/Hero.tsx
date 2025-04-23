@@ -18,7 +18,7 @@ const Hero = () => {
           alt="Hero Background"
           className="w-full h-full object-cover opacity-50"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-adeka-darkBlue/70 to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-black/10" />
       </div>
 
       {/* Content */}

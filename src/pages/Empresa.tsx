@@ -21,7 +21,7 @@ const Empresa = () => {
       <div className="flex flex-col md:flex-row items-center md:justify-between gap-8 mb-32">
         <div className="w-full md:w-1/2">
           <img
-            src="/imagenes/residential.jpg"
+            src="/imagenes/empresa2.jpg"
             alt="Equipo ADEKA"
             className="w-full h-[400px] object-cover rounded-lg shadow-md"
           />
