@@ -3,86 +3,70 @@ import { motion } from 'framer-motion';
 
 const AboutUs = () => {
   return (
-    <section
-      id="about-us" // Este es el ID para el ancla
-      className="py-20 bg-gradient-to-b from-white to-gray-100"
+    <section className="px-[50px] py-16">
+  {/* Sobre ADEKA */}
+  <div className="flex flex-col md:flex-row items-center md:items-start mb-40 gap-12">
+    <motion.div
+      className="md:w-1/2"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
     >
-      <div className="container mx-auto px-4 md:px-6">
-        <motion.h2
-          className="text-3xl font-bold text-center text-adeka-darkBlue mb-12"
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          Sobre Nosotros
-        </motion.h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-adeka-black mb-8">Sobre ADEKA</h2>
+      <p className="text-base md:text-lg text-gray-700 mb-6">
+        Somos una empresa ubicada en <strong>Coria del Río (Sevilla)</strong>, especializada en <strong>servicios de control de accesos, vigilancia, atención al público y supervisión en eventos</strong>. Nuestro equipo gestiona eficazmente el flujo de personas, <strong>controla accesos restringidos</strong> y colabora en la <strong>organización de espacios</strong>, siempre con un trato cordial y profesional. En ADEKA, cada cliente recibe una <strong>solución adaptada a sus necesidades</strong>, con la <strong>garantía de calidad y confianza</strong> que nos caracteriza.
+      </p>
+      <a href="/empresa">
+        <button className="bg-black text-white px-6 py-2 rounded-md shadow-md hover:bg-gray-900 transition">
+          Conócenos un poco más
+        </button>
+      </a>
+    </motion.div>
 
-        <motion.div
-          className="bg-white p-8 rounded-lg shadow-md"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-2xl font-semibold text-adeka-darkBlue mb-6">Nuestra Empresa</h3>
-          <p className="text-lg text-gray-600 mb-6">
-            <strong>ADEKA</strong> es una empresa especializada en la prestación de servicios de <strong>auxiliares de control</strong>, comprometida con la <strong>seguridad</strong>, la <strong>organización</strong> y la <strong>optimización</strong> de espacios en instalaciones y eventos. Nuestro principal objetivo es garantizar un ambiente <strong>seguro</strong>, <strong>ordenado</strong> y <strong>eficiente</strong> tanto en accesos como en el desarrollo de diversas actividades.
-          </p>
-          <p className="text-lg text-gray-600 mb-6">
-            Contamos con un equipo altamente capacitado de <strong>auxiliares de control</strong>, quienes se encargan de la <strong>supervisión</strong> y <strong>vigilancia</strong> de instalaciones, gestionando de forma efectiva el <strong>flujo de personas</strong>, controlando el <strong>acceso a áreas restringidas</strong> y brindando soporte en la realización de <strong>procedimientos operativos</strong>.
-          </p>
-          <p className="text-lg text-gray-600 mb-6">
-            En <strong>ADEKA</strong>, entendemos que cada cliente tiene <strong>necesidades únicas</strong>. Por ello, nos aseguramos de ofrecer un servicio <strong>flexible</strong>, adaptado a cada entorno y situación. Nuestra prioridad es brindar <strong>tranquilidad</strong> y <strong>seguridad</strong>, contribuyendo a la correcta operativa de las instalaciones o eventos en los que colaboramos.
-          </p>
-          <p className="text-lg text-gray-600 mb-6">
-            Gracias por considerar a <strong>ADEKA</strong> como su <strong>socio de confianza</strong> en soluciones de <strong>control</strong> y <strong>seguridad</strong>.
-          </p>
-        </motion.div>
+    <motion.div
+      className="md:w-1/2"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+    >
+      <img
+        src="/imagenes/sobre_nosotros.jpg"
+        alt="Sobre ADEKA"
+        className="w-full h-auto object-cover rounded-lg shadow-lg"
+      />
+    </motion.div>
+  </div>
 
-        <motion.div
-          className="mt-12 text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-2xl font-semibold text-adeka-darkBlue mb-6">Nuestros Valores</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[{
-              icon: Shield,
-              title: "Seguridad",
-              text: "Priorizamos la seguridad en todos nuestros servicios para garantizar la tranquilidad de nuestros clientes."
-            }, {
-              icon: User,
-              title: "Atención al Cliente",
-              text: "Ofrecemos atención personalizada, adaptada a las necesidades específicas de cada cliente."
-            }, {
-              icon: Calendar,
-              title: "Compromiso con el Tiempo",
-              text: "Cumplimos con los plazos establecidos para asegurar un servicio puntual y eficaz."
-            }, {
-              icon: Leaf,
-              title: "Sostenibilidad",
-              text: "Aplicamos prácticas respetuosas con el medio ambiente, apostando por un futuro más verde."
-            }].map((item, i) => (
-              <motion.div
-                key={item.title}
-                className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 + i * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <item.icon size={36} className="text-adeka-gold mb-4 mx-auto" />
-                <h4 className="text-lg font-semibold text-adeka-darkBlue mb-2">{item.title}</h4>
-                <p className="text-gray-600">{item.text}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </div>
-    </section>
+  {/* Por qué elegir ADEKA */}
+  <div className="flex flex-col md:flex-row items-center md:items-start gap-12 bg-gradient-to-r from-black via-gray-900 to-black p-8 rounded-sm">
+
+    <motion.div
+      className="md:w-1/2"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
+      <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">¿Por qué elegirnos?</h2>
+      <p className="text-base md:text-lg text-gray-300">
+        Elegir ADEKA es apostar por la <strong>seguridad, el orden y la tranquilidad</strong>. Con <strong>más de 20 años de experiencia</strong>, ofrecemos un servicio profesional de <strong>auxiliares de control altamente capacitados</strong> para garantizar el correcto funcionamiento de instalaciones y eventos. Nos destacamos por nuestra <strong>flexibilidad, atención personalizada</strong> y <strong>compromiso con la normativa vigente</strong>.
+      </p>
+    </motion.div>
+
+    <motion.div
+      className="md:w-1/2"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+    >
+      <img
+        src="/imagenes/elegirnos.jpg"
+        alt="Por qué elegir ADEKA"
+        className="w-full h-auto object-cover rounded-lg shadow-lg"
+      />
+    </motion.div>
+  </div>
+</section>
+    
   );
 };
 

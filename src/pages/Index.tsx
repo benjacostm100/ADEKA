@@ -9,8 +9,6 @@ const Index = () => {
     <div className="flex flex-col min-h-screen">
       <Hero />
       <Services />
-      <About />
-      <ContactForm />
       <WhatsAppButton />
     </div>
   );
