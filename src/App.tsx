@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import TopBar from "./components/TopBar"; // 🆕 IMPORTADO
 import Footer from "./components/Footer";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
@@ -47,6 +48,7 @@ const App = () => (
       <BrowserRouter>
         <ScrollToTop />
         <div className="flex flex-col min-h-screen">
+          <TopBar /> {/* 🆕 AÑADIDO AQUÍ */}
           <Navbar />
           <MainContent>
             <Routes>

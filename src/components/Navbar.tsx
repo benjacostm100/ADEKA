@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'; 
+import { useState, useEffect } from 'react';  
 import { Menu } from 'lucide-react'; 
 import { 
   NavigationMenu, 
@@ -30,8 +30,7 @@ const Navbar = () => {
   };
 
   return ( 
-    <nav className={`fixed top-0 left-0 w-full z-50 bg-white transition-all duration-300 ${scrolled ? 'shadow-md py-1' : 'py-2'}`}>
-
+    <nav className={`fixed left-0 w-full z-40 bg-white transition-all duration-300 ${scrolled ? 'shadow-md py-1 top-0' : 'top-12 py-2'}`}>
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center text-black text-lg">
         <Link to="/" className="flex items-center space-x-2" onClick={handleLinkClick}>
           <img src="./imagenes/logo3.JPG" alt="ADEKA Logo" className="h-16 w-auto mr-2" />
