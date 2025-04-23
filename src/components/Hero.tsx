@@ -14,11 +14,11 @@ const Hero = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 bg-black">
         <img
-          src="https://images.unsplash.com/photo-1487958449943-2429e8be8625"
+          src="/imagenes/inicio.jpg"
           alt="Hero Background"
           className="w-full h-full object-cover opacity-50"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-adeka-darkBlue/70 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-adeka-darkBlue/70 to-black/50" />
       </div>
 
       {/* Content */}
@@ -33,7 +33,7 @@ const Hero = () => {
           <div className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
             <Link
               to="/solicitar-presupuesto"
-              className="bg-adeka-gold hover:bg-adeka-gold/90 text-white font-bold py-3 px-6 rounded-md shadow-lg transform transition-all duration-300 hover:scale-105 inline-block"
+              className="bg-adeka-gold hover:bg-adeka-gold/90 text-white font-bold py-2 px-6 shadow-lg transform transition-all duration-300 hover:scale-105 inline-block border-2 border-black"
             >
               Pídenos presupuesto sin compromiso
             </Link>

@@ -3,39 +3,48 @@ import { motion } from 'framer-motion';
 
 const Empresa = () => {
   return (
-    <div className="container mx-auto px-4 md:px-6 bg-white"> {/* Aumenté pt-24 a pt-32 */}
-      <motion.h2
-        className="text-3xl font-bold text-center text-adeka-darkBlue mb-12"
-        initial={{ opacity: 0, y: -30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        Sobre Nosotros
-      </motion.h2>
+    <div className="container mx-auto px-4 md:px-6 bg-white">
+      {/* Imagen de título con sombra negra */}
+      <div className="relative h-72 md:h-80 w-full mb-32 rounded-xl overflow-hidden  drop-shadow-md">
+        <img
+          src="/imagenes/empresa.jpg"
+          alt="ADEKA fondo"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-adeka-darkBlue/70 to-black/50 flex items-center justify-center">
+        <h2 className="text-4xl md:text-5xl font-bold text-white">Sobre Nosotros</h2>
+        </div>
 
-      <motion.div
-        className="bg-white p-8 rounded-lg shadow-md mb-12"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.2 }}
-        viewport={{ once: true }}
-      >
-        <h3 className="text-2xl font-semibold text-adeka-darkBlue mb-6">Nuestra Empresa</h3>
-        <p className="text-lg text-gray-600 mb-6">
-          <strong>ADEKA</strong> es una empresa especializada en la prestación de servicios de <strong>auxiliares de control</strong>, comprometida con la <strong>seguridad</strong>, la <strong>organización</strong> y la <strong>optimización</strong> de espacios en instalaciones y eventos. Nuestro principal objetivo es garantizar un ambiente <strong>seguro</strong>, <strong>ordenado</strong> y <strong>eficiente</strong> tanto en accesos como en el desarrollo de diversas actividades.
-        </p>
-        <p className="text-lg text-gray-600 mb-6">
-          Contamos con un equipo altamente capacitado de <strong>auxiliares de control</strong>, quienes se encargan de la <strong>supervisión</strong> y <strong>vigilancia</strong> de instalaciones, gestionando de forma efectiva el <strong>flujo de personas</strong>, controlando el <strong>acceso a áreas restringidas</strong> y brindando soporte en la realización de <strong>procedimientos operativos</strong>.
-        </p>
-        <p className="text-lg text-gray-600 mb-6">
-          En <strong>ADEKA</strong>, entendemos que cada cliente tiene <strong>necesidades únicas</strong>. Por ello, nos aseguramos de ofrecer un servicio <strong>flexible</strong>, adaptado a cada entorno y situación. Nuestra prioridad es brindar <strong>tranquilidad</strong> y <strong>seguridad</strong>, contribuyendo a la correcta operativa de las instalaciones o eventos en los que colaboramos.
-        </p>
-        <p className="text-lg text-gray-600 mb-6">
-          Gracias por considerar a <strong>ADEKA</strong> como su <strong>socio de confianza</strong> en soluciones de <strong>control</strong> y <strong>seguridad</strong>.
-        </p>
-      </motion.div>
+      </div>
 
+      {/* Imagen + texto extendido */}
+      <div className="flex flex-col md:flex-row items-center md:justify-between gap-8 mb-32">
+        <div className="w-full md:w-1/2">
+          <img
+            src="/imagenes/residential.jpg"
+            alt="Equipo ADEKA"
+            className="w-full h-[400px] object-cover rounded-lg shadow-md"
+          />
+        </div>
+        <div className="w-full md:w-1/2 text-base text-gray-800 space-y-4">
+        <h2 className='text-lg font-bold'>Nuestra Empresa</h2>
+        <p>
+          <strong className="text-adeka-darkBlue">ADEKA</strong> es una empresa enfocada en brindar servicios de <strong>auxiliares de control</strong>, con el objetivo de optimizar la gestión de accesos y garantizar la <strong>seguridad</strong> en cada espacio donde intervenimos.
+        </p>
+        <p>
+          Nos especializamos en crear entornos ordenados, seguros y eficientes, ya sea en eventos, edificios corporativos o instalaciones privadas. Nuestro personal está altamente capacitado para responder de forma profesional a diferentes escenarios operativos.
+        </p>
+        <p>
+          Apostamos por un servicio <strong>flexible</strong>, personalizado y eficiente, adaptándonos a cada cliente con soluciones que priorizan el <strong>control</strong>, la <strong>organización</strong> y la <strong>tranquilidad</strong> en cada intervención.
+        </p>
+        <p>
+          Creemos en la importancia de construir relaciones de confianza, basadas en la responsabilidad y la excelencia en cada tarea. Nuestro compromiso es ser un aliado estratégico en el cumplimiento de los objetivos de cada proyecto.
+        </p>
+      </div>
+
+      </div>
+
+      {/* Valores */}
       <motion.div
         className="text-center"
         initial={{ opacity: 0, y: 30 }}
@@ -44,7 +53,7 @@ const Empresa = () => {
         viewport={{ once: true }}
       >
         <h3 className="text-2xl font-semibold text-adeka-darkBlue mb-6">Nuestros Valores</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-32">
           {[{
             icon: Shield,
             title: "Seguridad",
@@ -76,12 +85,27 @@ const Empresa = () => {
             </motion.div>
           ))}
         </div>
-      </motion.div>
-
-      {/* Agregar padding y margen en la parte inferior */}
-      <div className="py-16 bg-adeka-darkBlue text-white text-center"> {/* Aumenté py-12 a py-16 */}
-        <p className="text-lg">Gracias por visitarnos. Estamos comprometidos con la excelencia.</p>
+          </motion.div>
+                <div className="w-full py-16 bg-gradient-to-b from-neutral-800 to-black text-white">
+        <div className="container mx-auto px-4 text-center max-w-3xl">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-snug">
+            ¿Buscás una empresa de servicios integrales en la que puedas confiar?
+          </h2>
+          <p className="text-base md:text-lg mb-8 text-gray-300">
+            En <strong className="font-semibold text-white">ADEKA</strong>, brindamos soluciones personalizadas para empresas, instituciones y comunidades de propietarios. Nos adaptamos a tus necesidades específicas con profesionalismo, eficacia y el respaldo de un equipo capacitado.
+          </p>
+          <a
+            href="https://wa.me/549XXXXXXXXXX"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-3 bg-gradient-to-r from-neutral-800 to-black text-white font-semibold border-2 border-white hover:opacity-90 transition-all duration-300"
+          >
+            Contáctanos
+          </a>
+        </div>
       </div>
+
+
     </div>
   );
 };
