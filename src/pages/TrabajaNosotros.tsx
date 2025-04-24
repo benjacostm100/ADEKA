@@ -1,29 +1,52 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/components/ui/use-toast";
-import { Briefcase, Upload } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Briefcase, Link } from 'lucide-react';
 
 const TrabajaNosotros = () => {
   const { toast } = useToast();
   const [acceptedPrivacy, setAcceptedPrivacy] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!acceptedPrivacy) {
       toast({
         title: "Error",
-        description: "Por favor, lee y acepta la política de privacidad antes de enviar el formulario.",
+        description: "Por favor, lee y acepta la política de privacidad.",
         variant: "destructive",
       });
       return;
     }
-    
-    // Form submission logic would go here
+
+    if (formRef.current) {
+      emailjs.sendForm(
+        'service_n738dot',         // Reemplazar por tu SERVICE ID
+        'template_nlstdwe',        // Reemplazar por tu TEMPLATE ID
+        formRef.current,
+        'KQDglcggc3HBv46cx'             // Reemplazar por tu PUBLIC KEY
+      )
+      .then(() => {
+        toast({
+          title: "Enviado",
+          description: "Tu solicitud ha sido enviada correctamente.",
+        });
+        formRef.current?.reset();
+        setAcceptedPrivacy(false);
+      })
+      .catch(() => {
+        toast({
+          title: "Error",
+          description: "Ocurrió un error al enviar el formulario.",
+          variant: "destructive",
+        });
+      });
+    }
   };
 
   const openPrivacyPolicy = () => {
@@ -39,46 +62,25 @@ const TrabajaNosotros = () => {
             <h1 className="text-4xl font-bold text-adeka-darkBlue mt-4 mb-4">
               Trabaja con Nosotros
             </h1>
-            <p className="text-lg text-gray-600 mb-2">
-              Queremos que formes parte de Adeka.
-            </p>
-            <p className="text-lg text-gray-600 mb-2">
-              ¡Únete a nuestro equipo!
-            </p>
-            <p className="text-lg text-gray-600 mb-2">
-              Contamos contigo.
-            </p>
-            <p className="text-lg text-gray-600">
-              Mándanos tu currículum…
-            </p>
+            <p className="text-lg text-gray-600">¡Únete a nuestro equipo!</p>
           </div>
-          
+
           <div className="bg-white rounded-lg shadow-md p-8">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 mb-1">
-                    Nombre
-                  </label>
-                  <Input id="nombre" required />
+                  <label htmlFor="nombre">Nombre</label>
+                  <Input name="nombre" id="nombre" required />
                 </div>
                 <div>
-                  <label htmlFor="apellido" className="block text-sm font-medium text-gray-700 mb-1">
-                    Apellido
-                  </label>
-                  <Input id="apellido" required />
+                  <label htmlFor="apellido">Apellido</label>
+                  <Input name="apellido" id="apellido" required />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="profesion" className="block text-sm font-medium text-gray-700 mb-1">
-                  Profesión
-                </label>
-                <select 
-                  id="profesion" 
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-adeka-gold"
-                  required
-                >
+                <label htmlFor="profesion">Profesión</label>
+                <select name="profesion" id="profesion" required className="w-full border rounded px-3 py-2">
                   <option value="">Selecciona una opción</option>
                   <option value="limpieza">Limpieza</option>
                   <option value="recepcion">Recepción</option>
@@ -88,61 +90,43 @@ const TrabajaNosotros = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                  Correo electrónico
-                </label>
-                <Input id="email" type="email" required />
+                <label htmlFor="email">Correo electrónico</label>
+                <Input type="email" name="email" id="email" required />
               </div>
 
               <div>
-                <label htmlFor="telefono" className="block text-sm font-medium text-gray-700 mb-1">
-                  Teléfono
-                </label>
-                <Input id="telefono" type="tel" required />
+                <label htmlFor="telefono">Teléfono</label>
+                <Input type="tel" name="telefono" id="telefono" required />
               </div>
 
               <div>
-                <label htmlFor="cv" className="block text-sm font-medium text-gray-700 mb-1">
-                  Adjuntar CV (máx. 3MB)
-                </label>
-                <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
-                  <div className="space-y-1 text-center">
-                    <Upload className="mx-auto h-12 w-12 text-gray-400" />
-                    <div className="flex text-sm text-gray-600">
-                      <label
-                        htmlFor="cv"
-                        className="relative cursor-pointer bg-white rounded-md font-medium text-adeka-gold hover:text-adeka-gold/90 focus-within:outline-none"
-                      >
-                        <span>Subir un archivo</span>
-                        <input id="cv" name="cv" type="file" className="sr-only" accept=".pdf,.doc,.docx" required />
-                      </label>
-                      <p className="pl-1">o arrastra y suelta</p>
-                    </div>
-                    <p className="text-xs text-gray-500">PDF, DOC hasta 3MB</p>
-                  </div>
+                <label htmlFor="cv_link">Link al CV (Google Drive, Dropbox, etc.)</label>
+                <div className="mt-1 flex items-center">
+                  <Link className="mr-2 text-gray-400" />
+                  <Input
+                    name="cv_link"
+                    id="cv_link"
+                    type="url"
+                    placeholder="https://drive.google.com/..."
+                    required
+                  />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="mensaje" className="block text-sm font-medium text-gray-700 mb-1">
-                  Mensaje
-                </label>
-                <Textarea id="mensaje" />
+                <label htmlFor="mensaje">Mensaje</label>
+                <Textarea name="mensaje" id="mensaje" />
               </div>
 
               <div className="flex items-start space-x-2">
-                <Checkbox 
-                  id="privacidad" 
+                <Checkbox
+                  id="privacidad"
                   checked={acceptedPrivacy}
                   onCheckedChange={(checked) => setAcceptedPrivacy(checked as boolean)}
                 />
                 <label htmlFor="privacidad" className="text-sm text-gray-600">
                   He leído y acepto la{" "}
-                  <button
-                    type="button"
-                    onClick={openPrivacyPolicy}
-                    className="text-adeka-gold hover:underline"
-                  >
+                  <button type="button" onClick={openPrivacyPolicy} className="text-adeka-gold hover:underline">
                     política de privacidad
                   </button>
                 </label>
