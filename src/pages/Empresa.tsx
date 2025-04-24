@@ -96,7 +96,7 @@ const Empresa = () => {
             En <strong className="font-semibold text-white">ADEKA</strong>, brindamos soluciones personalizadas para empresas, instituciones y comunidades de propietarios. Nos adaptamos a tus necesidades específicas con profesionalismo, eficacia y el respaldo de un equipo capacitado.
           </p>
           <a
-            href="https://wa.me/549XXXXXXXXXX"
+            href="https://wa.me/34669003528"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-8 py-3 bg-gradient-to-r from-neutral-800 to-black text-white font-semibold border-2 border-white hover:opacity-90 transition-all duration-300"
