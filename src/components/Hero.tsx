@@ -14,7 +14,7 @@ const Hero = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 bg-black">
         <img
-          src="/imagenes/inicio2.jpg"
+          src="/imagenes/hero.jpg"
           alt="Hero Background"
           className="w-full h-full object-cover opacity-50"
         />

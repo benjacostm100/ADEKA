@@ -5,7 +5,7 @@ const PoliticaPrivacidad = () => {
       <div className="prose max-w-none">
         <h2 className="text-xl font-semibold mt-6 mb-4"><u>¿CÓMO TRATAMOS SUS DATOS PERSONALES?</u></h2>
         <p>
-          En cumplimiento del Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos, le informamos que los datos personales que nos facilite serán tratados por <strong><u>EUROTEX AUXILIARES SL</u></strong>.
+          En cumplimiento del Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos, le informamos que los datos personales que nos facilite serán tratados por <strong><u>AREKA</u></strong>.
         </p>
         
         <p className="mt-4">

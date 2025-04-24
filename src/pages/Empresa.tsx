@@ -7,7 +7,7 @@ const Empresa = () => {
       {/* Imagen de título con sombra negra */}
       <div className="relative h-72 md:h-80 w-full mb-32 rounded-xl overflow-hidden  drop-shadow-md">
         <img
-          src="/imagenes/empresa.jpg"
+          src="/imagenes/empresa6.jpg"
           alt="ADEKA fondo"
           className="w-full h-full object-cover"
         />
@@ -21,25 +21,26 @@ const Empresa = () => {
       <div className="flex flex-col md:flex-row items-center md:justify-between gap-8 mb-32">
         <div className="w-full md:w-1/2">
           <img
-            src="/imagenes/empresa2.jpg"
+            src="/imagenes/empresa7.jpg"
             alt="Equipo ADEKA"
             className="w-full h-[400px] object-cover rounded-lg shadow-md"
           />
         </div>
         <div className="w-full md:w-1/2 text-base text-gray-800 space-y-4">
         <h2 className='text-lg font-bold'>Nuestra Empresa</h2>
-        <p>
-          <strong className="text-adeka-darkBlue">ADEKA</strong> es una empresa enfocada en brindar servicios de <strong>auxiliares de control</strong>, con el objetivo de optimizar la gestión de accesos y garantizar la <strong>seguridad</strong> en cada espacio donde intervenimos.
-        </p>
-        <p>
-          Nos especializamos en crear entornos ordenados, seguros y eficientes, ya sea en eventos, edificios corporativos o instalaciones privadas. Nuestro personal está altamente capacitado para responder de forma profesional a diferentes escenarios operativos.
-        </p>
-        <p>
-          Apostamos por un servicio <strong>flexible</strong>, personalizado y eficiente, adaptándonos a cada cliente con soluciones que priorizan el <strong>control</strong>, la <strong>organización</strong> y la <strong>tranquilidad</strong> en cada intervención.
-        </p>
-        <p>
-          Creemos en la importancia de construir relaciones de confianza, basadas en la responsabilidad y la excelencia en cada tarea. Nuestro compromiso es ser un aliado estratégico en el cumplimiento de los objetivos de cada proyecto.
-        </p>
+              <p>
+        <strong className="text-adeka-darkBlue">ADEKA</strong> es una empresa especializada en <strong>auxiliares de control</strong>, <strong>mantenimiento de comunidades</strong> y <strong>jardinería profesional</strong>, enfocada en crear espacios seguros, organizados y bien cuidados.
+      </p>
+      <p>
+        Nuestro equipo está capacitado para gestionar accesos, supervisar eventos, mantener instalaciones en óptimas condiciones y cuidar espacios verdes, siempre con profesionalismo y atención a los detalles. Nos adaptamos tanto a entornos residenciales como corporativos, garantizando soluciones eficaces en cada intervención.
+      </p>
+      <p>
+        Apostamos por un servicio <strong>flexible</strong>, eficiente y adaptado a cada cliente, priorizando el <strong>orden</strong>, la <strong>seguridad</strong> y la <strong>calidad</strong> en cada intervención. Cada tarea es ejecutada con compromiso y precisión, sin perder de vista la confianza que nuestros clientes depositan en nosotros.
+      </p>
+      <p>
+        En <strong className="text-adeka-darkBlue">ADEKA</strong> creemos en las relaciones basadas en la confianza, la responsabilidad y la excelencia, con el compromiso de ser un aliado estratégico en cada proyecto.
+      </p>
+
       </div>
 
       </div>

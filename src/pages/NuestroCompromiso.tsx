@@ -16,9 +16,9 @@ const NuestroCompromiso = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Imagen de título con sombra negra */}
-      <div className="relative h-72 md:h-80 w-full mb-16 rounded-xl overflow-hidden drop-shadow-md">
+      <div className="relative h-72 md:h-80 w-full rounded-xl overflow-hidden drop-shadow-md">
         <img
-          src="/imagenes/compromiso.jpg"
+          src="/imagenes/compromiso5.jpg"
           alt="Compromiso ADEKA"
           className="w-full h-full object-cover"
         />
@@ -42,7 +42,7 @@ const NuestroCompromiso = () => {
               Compromiso ADEKA
             </h1>
             <h2 className="text-2xl text-gray-700 mb-8">
-              Queremos ser su empresa de confianza, más de 20 años de experiencia nos avalan.
+              Queremos ser su empresa de confianza, brindando soluciones personalizadas.
             </h2>
 
             <div className="bg-white rounded-lg shadow-md p-8">
@@ -63,13 +63,13 @@ const NuestroCompromiso = () => {
           </div>
 
           {/* Imagen a la derecha (1/3 de ancho) */}
-<div className="w-full md:w-1/3 flex justify-center mt-32">
-  <img
-    src="/imagenes/compromiso4.jpg"
-    alt="Compromiso ADEKA"
-    className="w-full h-dvh object-cover rounded-lg shadow-lg"
-  />
-</div>
+          <div className="w-full md:w-1/3 flex justify-center mt-32">
+            <img
+              src="/imagenes/compromiso8.jpg"
+              alt="Compromiso ADEKA"
+              className="w-full h-dvh object-cover rounded-lg shadow-lg"
+            />
+          </div>
 
         </motion.div>
       </div>

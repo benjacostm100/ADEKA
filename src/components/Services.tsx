@@ -1,5 +1,6 @@
 import { Shield, User, Calendar, Leaf } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom';
 
 const AboutUs = () => {
   return (
@@ -14,13 +15,15 @@ const AboutUs = () => {
     >
       <h2 className="text-2xl md:text-3xl font-bold text-adeka-black mb-8">Sobre ADEKA</h2>
       <p className="text-base md:text-lg text-gray-700 mb-6">
-        Somos una empresa ubicada en <strong>Coria del Río (Sevilla)</strong>, especializada en <strong>servicios de control de accesos, vigilancia, atención al público y supervisión en eventos</strong>. Nuestro equipo gestiona eficazmente el flujo de personas, <strong>controla accesos restringidos</strong> y colabora en la <strong>organización de espacios</strong>, siempre con un trato cordial y profesional. En ADEKA, cada cliente recibe una <strong>solución adaptada a sus necesidades</strong>, con la <strong>garantía de calidad y confianza</strong> que nos caracteriza.
-      </p>
-      <a href="/empresa">
-        <button className="bg-black text-white px-6 py-2 rounded-md shadow-md hover:bg-gray-900 transition">
-          Conócenos un poco más
-        </button>
-      </a>
+  Somos una empresa ubicada en <strong>Coria del Río (Sevilla)</strong>, especializada en <strong>servicios auxiliares de control, mantenimiento integral de comunidades y jardinería profesional</strong>. Nuestro equipo gestiona accesos, organiza eventos, mantiene instalaciones y cuida espacios verdes con profesionalismo y eficacia. <br />
+  En <strong>ADEKA</strong>, ofrecemos <strong>soluciones adaptadas a cada cliente</strong>, priorizando la <strong>calidad, la confianza y la atención personalizada</strong> en cada intervención.
+</p>
+
+    <Link to ="/empresa">
+      <button className="bg-black text-white px-6 py-2 rounded-md shadow-md hover:bg-gray-900 transition">
+        Conócenos un poco más
+      </button>
+    </Link>
     </motion.div>
 
     <motion.div
@@ -30,7 +33,7 @@ const AboutUs = () => {
       transition={{ duration: 0.6, delay: 0.2 }}
     >
       <img
-        src="/imagenes/inicio.jpg"
+        src="/imagenes/hero2.jpg"
         alt="Sobre ADEKA"
         className="w-full h-auto object-cover rounded-lg shadow-lg"
       />
