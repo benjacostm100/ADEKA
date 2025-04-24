@@ -7,7 +7,7 @@ const ServiciosAuxiliares = () => {
       {/* Imagen de título con sombra negra */}
       <div className="relative h-72 md:h-80 w-full mb-32 rounded-xl overflow-hidden  drop-shadow-md">
         <img
-          src="/imagenes/security.jpg"
+          src="/imagenes/security3.jpg"
           alt="ADEKA fondo"
           className="w-full h-full object-cover"
         />
@@ -44,9 +44,9 @@ const ServiciosAuxiliares = () => {
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         <img
-          src="/imagenes/security2.jpg"
+          src="/imagenes/security.jpg"
           alt="Auxiliares de Control en ADEKA"
-          className="w-full h-auto object-cover rounded-lg shadow-lg"
+          className=" h-[450px] object-cover rounded-lg shadow-lg"
         />
       </motion.div>
   </div>
