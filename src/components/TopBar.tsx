@@ -23,7 +23,7 @@ const TopBar = () => {
         <span className="hidden sm:block">✉️ contacto@adeka.com</span>
       </div>
       <a
-        href="https://wa.me/34654321987"
+        href="https://wa.me/34669003528"
         target="_blank"
         rel="noopener noreferrer"
         className="bg-black text-white font-bold px-4 py-1 hover:bg-gray-300 hover:text-black transition-colors text-sm "

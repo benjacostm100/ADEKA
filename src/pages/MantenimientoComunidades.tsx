@@ -17,38 +17,38 @@ const MantenimientoComunidades = () => {
      
 
       </div>
-      <div className="flex flex-col md:flex-row items-center md:items-start mb-16 gap-12">
-  <motion.div
-    className="md:w-1/2"
-    initial={{ opacity: 0, y: 30 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6 }}
-  >
-    <h2 className="text-2xl md:text-3xl font-bold text-adeka-black mb-8">Servicios de Mantenimiento</h2>
-    <p className="text-base md:text-lg text-gray-700 mb-6">
-      En <strong>ADEKA</strong>, nos especializamos en el <strong>mantenimiento integral de comunidades</strong>, asegurando un entorno funcional y seguro para todos sus residentes.
-    </p>
-    <p className="text-base md:text-lg text-gray-700 mb-6">
-      Ofrecemos una amplia gama de servicios adaptados a las necesidades de su comunidad: <strong>limpieza de áreas comunes</strong>, <strong>mantenimiento de jardines</strong>, <strong>reparación de instalaciones</strong>, <strong>mantenimiento de sistemas de calefacción</strong>, <strong>fontanería</strong> y más.
-    </p>
-    <p className="text-base md:text-lg text-gray-700 mb-6">
-      Nuestro equipo está comprometido con la <strong>calidad y la puntualidad</strong>, garantizando que su comunidad se mantenga en perfectas condiciones durante todo el año.
-    </p>
-  </motion.div>
+  <div className="flex flex-col md:flex-row items-center md:items-start mb-16 gap-12">
+      <motion.div
+        className="md:w-1/2"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h2 className="text-2xl md:text-3xl font-bold text-adeka-black mb-8">Servicios de Mantenimiento</h2>
+        <p className="text-base md:text-lg text-gray-700 mb-6">
+          En <strong>ADEKA</strong>, nos especializamos en el <strong>mantenimiento integral de comunidades</strong>, asegurando un entorno funcional y seguro para todos sus residentes.
+        </p>
+        <p className="text-base md:text-lg text-gray-700 mb-6">
+          Ofrecemos una amplia gama de servicios adaptados a las necesidades de su comunidad: <strong>limpieza de áreas comunes</strong>, <strong>mantenimiento de jardines</strong>, <strong>reparación de instalaciones</strong>, <strong>mantenimiento de sistemas de calefacción</strong>, <strong>fontanería</strong> y más.
+        </p>
+        <p className="text-base md:text-lg text-gray-700 mb-6">
+          Nuestro equipo está comprometido con la <strong>calidad y la puntualidad</strong>, garantizando que su comunidad se mantenga en perfectas condiciones durante todo el año.
+        </p>
+      </motion.div>
 
-  <motion.div
-    className="md:w-1/2"
-    initial={{ opacity: 0, y: 30 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6, delay: 0.2 }}
-  >
-    <img
-      src="/imagenes/mantenimiento.jpg"
-      alt="Mantenimiento de comunidades en ADEKA"
-      className="w-full h-auto object-cover rounded-lg shadow-lg"
-    />
-  </motion.div>
-</div>
+      <motion.div
+        className="md:w-1/2"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <img
+          src="/imagenes/mantenimiento.jpg"
+          alt="Mantenimiento de comunidades en ADEKA"
+          className="w-full h-auto object-cover rounded-lg shadow-lg"
+        />
+      </motion.div>
+    </div>
 
 
       <div className="container mx-auto px-4 py-8 mb-16">

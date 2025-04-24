@@ -34,7 +34,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center text-black text-lg">
         <Link to="/" className="flex items-center space-x-2" onClick={handleLinkClick}>
           <img src="./imagenes/logo3.JPG" alt="ADEKA Logo" className="h-16 w-auto mr-2" />
-          <span className="text-2xl font-bold text-black">ADEKA</span>
+          <span className="text-4xl font-montserrat font-semibold text-black">A.D.K</span>
         </Link>
 
         {/* Desktop Menu */}

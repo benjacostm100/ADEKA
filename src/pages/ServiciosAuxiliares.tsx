@@ -17,39 +17,39 @@ const ServiciosAuxiliares = () => {
      
 
       </div>
-      <div className="flex flex-col md:flex-row items-center md:items-start mb-20 gap-12">
-  <motion.div
-    className="md:w-1/2"
-    initial={{ opacity: 0, y: 30 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6 }}
-  >
-    <h2 className="text-2xl md:text-3xl font-bold text-adeka-black mb-8">Capacitados en Auxiliares de Control</h2>
-<p className="text-base md:text-lg text-gray-700 mb-6">
-  En <strong>ADEKA</strong> ofrecemos <strong>servicios profesionales de control y supervisión</strong> para instalaciones y eventos, garantizando espacios seguros, organizados y funcionales en todo momento.
-</p>
-<p className="text-base md:text-lg text-gray-700 mb-6">
-  Contamos con <strong>auxiliares capacitados</strong> para el control de accesos, vigilancia de áreas comunes, atención al público y soporte operativo, siempre con trato cordial y cumplimiento de normativas.
-</p>
-<p className="text-base md:text-lg text-gray-700 mb-6">
-  Nos adaptamos a <strong>empresas, comunidades o eventos</strong>, ofreciendo soluciones flexibles, confiables y alineadas con las necesidades de cada cliente.
-</p>
+  <div className="flex flex-col md:flex-row items-center md:items-start mb-20 gap-12">
+      <motion.div
+        className="md:w-1/2"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h2 className="text-2xl md:text-3xl font-bold text-adeka-black mb-8">Capacitados en Auxiliares de Control</h2>
+    <p className="text-base md:text-lg text-gray-700 mb-6">
+      En <strong>ADEKA</strong> ofrecemos <strong>servicios profesionales de control y supervisión</strong> para instalaciones y eventos, garantizando espacios seguros, organizados y funcionales en todo momento.
+    </p>
+    <p className="text-base md:text-lg text-gray-700 mb-6">
+      Contamos con <strong>auxiliares capacitados</strong> para el control de accesos, vigilancia de áreas comunes, atención al público y soporte operativo, siempre con trato cordial y cumplimiento de normativas.
+    </p>
+    <p className="text-base md:text-lg text-gray-700 mb-6">
+      Nos adaptamos a <strong>empresas, comunidades o eventos</strong>, ofreciendo soluciones flexibles, confiables y alineadas con las necesidades de cada cliente.
+    </p>
 
-  </motion.div>
+      </motion.div>
 
-  <motion.div
-    className="md:w-1/2"
-    initial={{ opacity: 0, y: 30 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6, delay: 0.2 }}
-  >
-    <img
-      src="/imagenes/security2.jpg"
-      alt="Auxiliares de Control en ADEKA"
-      className="w-full h-auto object-cover rounded-lg shadow-lg"
-    />
-  </motion.div>
-</div>
+      <motion.div
+        className="md:w-1/2"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <img
+          src="/imagenes/security2.jpg"
+          alt="Auxiliares de Control en ADEKA"
+          className="w-full h-auto object-cover rounded-lg shadow-lg"
+        />
+      </motion.div>
+  </div>
 
 
       <div className="container mx-auto px-4 py-16">

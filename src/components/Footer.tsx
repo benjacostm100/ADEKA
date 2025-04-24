@@ -11,12 +11,12 @@ const Footer = () => {
             <div className="flex items-center mb-4">
               <Link to="/">
                 <img 
-                  src="./imagenes/logo3.0.png" 
+                  src="./imagenes/logo4.png" 
                   alt="ADEKA Logo" 
                   className="h-10 w-auto"
                 />
               </Link>
-              <span className="ml-2 text-xl font-bold">ADEKA</span>
+              <span className="ml-2 text-lg font-bold">ADEKACONTROL S.L.U</span>
             </div>
             <p className="text-adeka-silver text-center md:text-left">
               Especialistas en servicios auxiliares de control, mantenimiento de comunidades y jardinería profesional.
