@@ -5,7 +5,7 @@ const PoliticaPrivacidad = () => {
       <div className="prose max-w-none">
         <h2 className="text-xl font-semibold mt-6 mb-4"><u>¿CÓMO TRATAMOS SUS DATOS PERSONALES?</u></h2>
         <p>
-          En cumplimiento del Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos, le informamos que los datos personales que nos facilite serán tratados por <strong><u>AREKA</u></strong>.
+          En cumplimiento del Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos, le informamos que los datos personales que nos facilite serán tratados por <strong><u>ADEKACONTROL S.L.U.</u></strong>.
         </p>
         
         <p className="mt-4">
@@ -18,7 +18,7 @@ const PoliticaPrivacidad = () => {
 
         <h2 className="text-xl font-semibold mt-6 mb-4"><u>¿QUIÉN ES EL RESPONSABLE DEL TRATAMIENTO DE SUS DATOS?</u></h2>
         <p>
-          El responsable del tratamiento de sus datos personales es <strong><u>ADEKA</u></strong>, cuyo domicilio se encuentra en <strong>C/Garrotín Nº-3 Bj, Coria del Río, (Sevilla)</strong>. 
+          El responsable del tratamiento de sus datos personales es <strong><u>ADEKACONTROL S.L.U.</u></strong>, cuyo domicilio se encuentra en <strong>C/Garrotín Nº-3 Bj, Coria del Río, (Sevilla)</strong>. 
         </p>
 
         <h2 className="text-xl font-semibold mt-6 mb-4"><u>¿CON QUÉ FINALIDAD TRATAMOS SUS DATOS PERSONALES?</u></h2>
@@ -55,8 +55,18 @@ const PoliticaPrivacidad = () => {
         </p>
 
         <p className="mt-4">
-          Esta Política de Privacidad está vigente desde su publicación y es de aplicación para todos los servicios ofrecidos por <strong><u>ADEKA</u></strong>.
+          Esta Política de Privacidad está vigente desde su publicación y es de aplicación para todos los servicios ofrecidos por <strong><u>ADEKACONTROL S.L.U.</u></strong>.
         </p>
+
+        <div className="mt-8 flex items-center">
+          <div className="mr-4">
+            <img src="/imagenes/sello.png" alt="Sello de ADEKACONTROL S.L.U." className="h-24" />
+          </div>
+          <div>
+            <p className="text-sm">En <strong>Coria del Río (Sevilla)</strong>, a <strong>{new Date().toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</strong></p>
+            <p className="mt-2">Fdo: <strong>ADEKACONTROL S.L.U.</strong></p>
+          </div>
+        </div>
       </div>
     </div>
   );

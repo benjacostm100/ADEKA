@@ -28,9 +28,9 @@ const Empresa = () => {
         </div>
         <div className="w-full md:w-1/2 text-base text-gray-800 space-y-4">
         <h2 className='text-lg font-bold'>Nuestra Empresa</h2>
-              <p>
-        <strong className="text-adeka-darkBlue">ADEKA</strong> es una empresa especializada en <strong>auxiliares de control</strong>, <strong>mantenimiento de comunidades</strong> y <strong>jardinería profesional</strong>, enfocada en crear espacios seguros, organizados y bien cuidados.
-      </p>
+        <p>
+        <strong className="text-adeka-darkBlue">ADEKA</strong> es una empresa especializada en <strong>auxiliares de control</strong>,   <strong>mantenimiento de comunidades</strong>, <strong>jardinería profesional</strong> y <strong>portería para eventos</strong> enfocada en   crear espacios seguros, organizados y bien cuidados.
+        </p>
       <p>
         Nuestro equipo está capacitado para gestionar accesos, supervisar eventos, mantener instalaciones en óptimas condiciones y cuidar espacios verdes, siempre con profesionalismo y atención a los detalles. Nos adaptamos tanto a entornos residenciales como corporativos, garantizando soluciones eficaces en cada intervención.
       </p>
