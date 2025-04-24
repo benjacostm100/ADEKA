@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, Smartphone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -27,18 +27,30 @@ const Footer = () => {
           <div className="flex flex-col items-center md:items-start">
             <h3 className="text-lg font-semibold mb-4">Contacto</h3>
             <div className="space-y-3">
-              <div className="flex items-center">
-                <Phone className="text-adeka-gold mr-3" size={18} />
-                <span>669.003.528</span>
-              </div>
-              <div className="flex items-center">
+            <div className="flex items-center">
                 <Mail className="text-adeka-gold mr-3" size={18} />
                 <span>informacionadeka@gmail.com</span>
               </div>
               <div className="flex items-center">
-                <MapPin className="text-adeka-gold mr-3" size={18} />
-                <span>C/Garrotín Nº-3 Bj Coria del Río, Sevilla</span>
+             <Smartphone className="text-adeka-gold mr-3" size={18} />
+                <span> Móvil: 669 003 528 / 699 675 239</span>
               </div>
+              <div className="flex items-center">
+             <Phone className="text-adeka-gold mr-3" size={18} />
+                <span> Oficina: 955 875 501</span>
+              </div>
+          <div className="flex items-center">
+          <MapPin className="text-adeka-gold mr-3" size={18} />
+          <a
+            href="https://maps.app.goo.gl/gt43rL2GJ5Q35qBU9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline text-white"
+          >
+            C/Garrotín Nº-3 Bj Coria del Río, Sevilla
+          </a>
+        </div>
+
             </div>
           </div>
           

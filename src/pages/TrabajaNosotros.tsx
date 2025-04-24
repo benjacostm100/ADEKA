@@ -40,7 +40,7 @@ const TrabajaNosotros = () => {
               Trabaja con Nosotros
             </h1>
             <p className="text-lg text-gray-600 mb-2">
-              Queremos que formes parte de Areka.
+              Queremos que formes parte de Adeka.
             </p>
             <p className="text-lg text-gray-600 mb-2">
               ¡Únete a nuestro equipo!

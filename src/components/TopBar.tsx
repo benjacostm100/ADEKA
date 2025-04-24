@@ -19,8 +19,8 @@ const TopBar = () => {
       }`}
     >
       <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
-        <span className="block">📞 +34 654 321 987</span>
-        <span className="hidden sm:block">✉️ contacto@adeka.com</span>
+        <span className="block">📞 +34 669 321 00 35 28</span>
+        <span className="hidden sm:block">✉️ informacionadeka@gmail.com</span>
       </div>
       <a
         href="https://wa.me/34669003528"

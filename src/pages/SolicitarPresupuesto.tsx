@@ -3,8 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, Smartphone } from "lucide-react";
 import { Link } from 'react-router-dom';
+
 
 const SolicitarPresupuesto = () => {
   const handleSubmit = (e: React.FormEvent) => {
@@ -75,40 +76,63 @@ const SolicitarPresupuesto = () => {
             </form>
 
             <div className="mt-12 space-y-4">
-              <h3 className="text-xl font-semibold text-adeka-darkBlue">Datos de contacto</h3>
-              <div className="space-y-2">
-                <p className="flex items-center gap-2">
-                  <Mail className="text-adeka-gold" size={20} />
-                  <span>Email: informacionadeka@gmail.com</span>
-                </p>
-                <p className="flex items-center gap-2">
-                  <Phone className="text-adeka-gold" size={20} />
-                  <span>Teléfono: 669.003.528</span>
-                </p>
-                <p className="flex items-center gap-2">
-                  <svg
-                    className="w-5 h-5 text-adeka-gold"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
-                  <span>Oficina: C/Garrotín Nº-3 Bj Coria del rio, (Sevilla)</span>
-                </p>
-              </div>
-            </div>
+                <h3 className="text-xl font-semibold text-adeka-darkBlue">Datos de contacto</h3>
+                <div className="space-y-3 text-sm sm:text-base">
+                  {/* Email */}
+                  <p className="flex items-center gap-2">
+                    <Mail className="text-adeka-gold" size={20} />
+                    <span className="font-medium">informacionadeka@gmail.com</span>
+                  </p>
+
+                  {/* Teléfonos móviles */}
+                  <p className="flex items-center gap-2">
+                    <Smartphone className="text-adeka-gold" size={20} />
+                    <span className="font-medium">
+                      Móvil: 669 003 528 / 699 675 239
+                    </span>
+                  </p>
+
+                  {/* Teléfono de oficina */}
+                  <p className="flex items-center gap-2">
+                    <Phone className="text-adeka-gold" size={20} />
+                    <span className="font-medium">
+                      Oficina: 955 875 501
+                    </span>
+                  </p>
+
+                  {/* Dirección con link */}
+                    <p className="flex items-start gap-2">
+                      <svg
+                        className="w-5 h-5 text-adeka-gold mt-1"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                      </svg>
+                      <a
+                        href="https://maps.app.goo.gl/gt43rL2GJ5Q35qBU9"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline font-medium"
+                      >
+                        C/Garrotín Nº-3 Bj<br />Coria del Río, Sevilla
+                      </a>
+                    </p>
+                  </div>
+                </div>
+
           </div>
         </div>
       </div>
