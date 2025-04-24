@@ -3,9 +3,9 @@ import { Shield, User, Calendar } from 'lucide-react';
 
 const ServiciosAuxiliares = () => {
   return (
-    <div className="min-h-screen px-4 md:px-6 bg-gray-50">
+    <div className="min-h-screen bg-gray-50">
       {/* Imagen de título con sombra negra */}
-      <div className="relative h-72 md:h-80 w-full mb-32 rounded-xl overflow-hidden  drop-shadow-md">
+      <div className="relative h-72 md:h-80 w-full mb-32 overflow-hidden  drop-shadow-md">
         <img
           src="/imagenes/security3.jpg"
           alt="ADEKA fondo"
@@ -17,7 +17,7 @@ const ServiciosAuxiliares = () => {
      
 
       </div>
-  <div className="flex flex-col md:flex-row items-center md:items-start mb-20 gap-12">
+  <div className="flex flex-col md:flex-row items-center md:items-start mb-20 gap-12 px-8">
       <motion.div
         className="md:w-1/2"
         initial={{ opacity: 0, y: 30 }}
@@ -56,7 +56,7 @@ const ServiciosAuxiliares = () => {
   </div>
 
 
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           <div className="bg-white p-6 rounded-lg shadow-md border border-adeka-silver/20">
             <div className="text-adeka-gold mb-4">

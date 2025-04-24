@@ -16,7 +16,7 @@ const NuestroCompromiso = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Imagen de título con sombra negra */}
-      <div className="relative h-72 md:h-80 w-full rounded-xl overflow-hidden drop-shadow-md">
+      <div className="relative h-72 md:h-80 w-full overflow-hidden drop-shadow-md">
         <img
           src="/imagenes/compromiso5.jpg"
           alt="Compromiso ADEKA"

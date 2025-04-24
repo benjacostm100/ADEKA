@@ -10,26 +10,26 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="pt-36 relative h-screen flex items-center">
+    <section id="home" className="pt-36 relative h-screen flex items-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 bg-black">
         <img
           src="/imagenes/hero.jpg"
           alt="Hero Background"
-          className="w-full h-full object-cover opacity-50"
+          className="w-screen h-screen object-cover opacity-50"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-black/10" />
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 md:px-6 z-10">
+      <div className="container mx-auto md:px-8 z-10 relative">
         <div className="max-w-3xl">
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-8 animate-fade-in " style={{ animationDelay: '0.2s' }}>
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
             Especialistas en Servicios Auxiliares y Mantenimiento
           </h1>
           <p className="text-lg md:text-xl text-adeka-silver mb-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-  <strong>Comprometidos</strong> con la seguridad, el orden y el bienestar de su comunidad o evento. <br />  <strong>Ofrecemos</strong> soluciones eficaces y personalizadas para cubrir todas sus necesidades de manera profesional y confiable.
-</p>
+            <strong>Comprometidos</strong> con la seguridad, el orden y el bienestar de su comunidad o evento. <br />  <strong>Ofrecemos</strong> soluciones eficaces y personalizadas para cubrir todas sus necesidades de manera profesional y confiable.
+          </p>
           <div className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
             <Link
               to="/solicitar-presupuesto"

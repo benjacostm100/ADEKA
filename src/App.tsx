@@ -34,7 +34,7 @@ const MainContent = ({ children }: { children: React.ReactNode }) => {
   const location = useLocation();
   const isHome = location.pathname === "/";
   return (
-    <main className={`flex-grow px-4 ${isHome ? "" : "pt-32"}`}>
+    <main className={`flex-grow ${isHome ? "" : "pt-32"}`}>
       {children}
     </main>
   );
