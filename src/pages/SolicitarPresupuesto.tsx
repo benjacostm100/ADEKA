@@ -5,21 +5,40 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Mail, Phone, Smartphone } from "lucide-react";
 import { Link } from 'react-router-dom';
-
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 const SolicitarPresupuesto = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Lógica para enviar el formulario aquí
+
+    if (!formRef.current) return;
+
+    emailjs.sendForm(
+      'service_n738dot',      // reemplazá esto
+      'template_0n91uzh',     // reemplazá esto
+      formRef.current,
+      'KQDglcggc3HBv46cx'       // reemplazá esto
+    )
+    .then(() => {
+      alert('Presupuesto enviado correctamente');
+      formRef.current?.reset();
+    })
+    .catch((error) => {
+      console.error('Error al enviar:', error);
+      alert('Hubo un error al enviar el mensaje');
+    });
   };
 
   const openPrivacyPolicy = (e) => {
-    e.preventDefault(); // Prevenir el comportamiento por defecto de Link
-    window.open('/politica-privacidad', '_blank'); // Abre la página en una nueva ventana o pestaña
+    e.preventDefault();
+    window.open('/politica-privacidad', '_blank');
   };
 
   return (
-    <div className=" min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl font-bold text-adeka-darkBlue mb-4">
@@ -27,33 +46,33 @@ const SolicitarPresupuesto = () => {
           </h1>
           
           <div className="bg-white rounded-lg shadow-md p-8 mt-8">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 mb-1">
                   Nombre
                 </label>
-                <Input id="nombre" required />
+                <Input id="nombre" name="name" required />
               </div>
 
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                   Correo electrónico
                 </label>
-                <Input id="email" type="email" required />
+                <Input id="email" name="email" type="email" required />
               </div>
 
               <div>
                 <label htmlFor="telefono" className="block text-sm font-medium text-gray-700 mb-1">
                   Teléfono
                 </label>
-                <Input id="telefono" type="tel" required />
+                <Input id="telefono" name="phone" type="tel" required />
               </div>
 
               <div>
                 <label htmlFor="mensaje" className="block text-sm font-medium text-gray-700 mb-1">
                   Mensaje (Cuéntanos qué necesitas)
                 </label>
-                <Textarea id="mensaje" required className="min-h-[150px]" />
+                <Textarea id="mensaje" name="message" required className="min-h-[150px]" />
               </div>
 
               <div className="flex items-start space-x-2">
@@ -76,62 +95,62 @@ const SolicitarPresupuesto = () => {
             </form>
 
             <div className="mt-12 space-y-4">
-                <h3 className="text-xl font-semibold text-adeka-darkBlue">Datos de contacto</h3>
-                <div className="space-y-3 text-sm sm:text-base">
-                  {/* Email */}
-                  <p className="flex items-center gap-2">
-                    <Mail className="text-adeka-gold" size={20} />
-                    <span className="font-medium">informacionadeka@gmail.com</span>
-                  </p>
+              <h3 className="text-xl font-semibold text-adeka-darkBlue">Datos de contacto</h3>
+              <div className="space-y-3 text-sm sm:text-base">
+                {/* Email */}
+                <p className="flex items-center gap-2">
+                  <Mail className="text-adeka-gold" size={20} />
+                  <span className="font-medium">informacionadeka@gmail.com</span>
+                </p>
 
-                  {/* Teléfonos móviles */}
-                  <p className="flex items-center gap-2">
-                    <Smartphone className="text-adeka-gold" size={20} />
-                    <span className="font-medium">
-                      Móvil: 669 003 528 / 699 675 239
-                    </span>
-                  </p>
+                {/* Teléfonos móviles */}
+                <p className="flex items-center gap-2">
+                  <Smartphone className="text-adeka-gold" size={20} />
+                  <span className="font-medium">
+                    Móvil: 669 003 528 / 699 675 239
+                  </span>
+                </p>
 
-                  {/* Teléfono de oficina */}
-                  <p className="flex items-center gap-2">
-                    <Phone className="text-adeka-gold" size={20} />
-                    <span className="font-medium">
-                      Oficina: 955 875 501
-                    </span>
-                  </p>
+                {/* Teléfono de oficina */}
+                <p className="flex items-center gap-2">
+                  <Phone className="text-adeka-gold" size={20} />
+                  <span className="font-medium">
+                    Oficina: 955 875 501
+                  </span>
+                </p>
 
-                  {/* Dirección con link */}
-                    <p className="flex items-start gap-2">
-                      <svg
-                        className="w-5 h-5 text-adeka-gold mt-1"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                        />
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                        />
-                      </svg>
-                      <a
-                        href="https://maps.app.goo.gl/gt43rL2GJ5Q35qBU9"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:underline font-medium"
-                      >
-                        C/Garrotín Nº-3 Bj<br />Coria del Río, Sevilla
-                      </a>
-                    </p>
-                  </div>
-                </div>
+                {/* Dirección con link */}
+                <p className="flex items-start gap-2">
+                  <svg
+                    className="w-5 h-5 text-adeka-gold mt-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                  <a
+                    href="https://maps.app.goo.gl/gt43rL2GJ5Q35qBU9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline font-medium"
+                  >
+                    C/Garrotín Nº-3 Bj<br />Coria del Río, Sevilla
+                  </a>
+                </p>
+              </div>
+            </div>
 
           </div>
         </div>
