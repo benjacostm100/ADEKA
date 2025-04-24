@@ -24,7 +24,7 @@ const ServiciosAuxiliares = () => {
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6 }}
   >
-    <h2 className="text-2xl md:text-3xl font-bold text-adeka-black mb-8">Servicios Auxiliares de Control</h2>
+    <h2 className="text-2xl md:text-3xl font-bold text-adeka-black mb-8">Capacitados en Auxiliares de Control</h2>
 <p className="text-base md:text-lg text-gray-700 mb-6">
   En <strong>ADEKA</strong> ofrecemos <strong>servicios profesionales de control y supervisión</strong> para instalaciones y eventos, garantizando espacios seguros, organizados y funcionales en todo momento.
 </p>

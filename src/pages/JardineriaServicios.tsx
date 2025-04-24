@@ -24,7 +24,7 @@ const JardineriaServicios = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-adeka-black mb-8">Jardinería Profesional</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-adeka-black mb-8">Servicios de Jardinería</h2>
           <p className="text-base md:text-lg text-gray-700 mb-6">
             En <strong>ADEKA</strong> ofrecemos <strong>soluciones integrales en jardinería</strong> y mantenimiento de espacios verdes. Nos especializamos en <strong>crear y cuidar jardines</strong> que combinan estética, funcionalidad y respeto por el entorno.
           </p>
