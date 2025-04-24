@@ -29,10 +29,14 @@ const ServiciosAuxiliares = () => {
       En <strong>ADEKA</strong> ofrecemos <strong>servicios profesionales de control y supervisión</strong> para instalaciones y eventos, garantizando espacios seguros, organizados y funcionales en todo momento.
     </p>
     <p className="text-base md:text-lg text-gray-700 mb-6">
-      Contamos con <strong>auxiliares capacitados</strong> para el control de accesos, vigilancia de áreas comunes, atención al público y soporte operativo, siempre con trato cordial y cumplimiento de normativas.
+      Contamos con <strong>auxiliares capacitados</strong> para el control de accesos, atención al público y soporte operativo, siempre con trato cordial y cumplimiento de normativas.
     </p>
     <p className="text-base md:text-lg text-gray-700 mb-6">
       Nos adaptamos a <strong>empresas, comunidades o eventos</strong>, ofreciendo soluciones flexibles, confiables y alineadas con las necesidades de cada cliente.
+      <p className="text-base md:text-lg text-gray-700 mb-6">
+  Nuestro compromiso es brindar un <strong>servicio eficiente, cercano y de calidad</strong>, que aporte tranquilidad y respaldo en cada situación.
+</p>
+
     </p>
 
       </motion.div>
@@ -60,16 +64,16 @@ const ServiciosAuxiliares = () => {
             </div>
             <h3 className="text-xl font-semibold text-adeka-black mb-4">Control de accesos</h3>
             <p className="text-gray-600">
-              Gestión profesional y eficiente de entradas y salidas para garantizar la máxima seguridad en sus instalaciones. Nuestro personal está altamente capacitado para controlar el flujo de personas y vehículos.
+              Gestión profesional y eficiente de entradas y salidas para garantizar el máximo control en sus instalaciones. Nuestro personal está altamente capacitado para controlar el flujo de personas y vehículos.
             </p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md">
             <div className="text-adeka-gold mb-4">
               <Shield size={36} />
             </div>
-            <h3 className="text-xl font-semibold text-adeka-darkBlue mb-4">Vigilancia y seguridad</h3>
+            <h3 className="text-xl font-semibold text-adeka-darkBlue mb-4">Servicios de Control</h3>
             <p className="text-gray-600">
-              Supervisión constante y profesional para garantizar la tranquilidad en su comunidad o evento. Contamos con personal cualificado y experimentado en servicios de vigilancia.
+              Supervisión constante y profesional para asegurar el buen funcionamiento de su comunidad o evento. Contamos con personal cualificado y experimentado en tareas de control y apoyo operativo.
             </p>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md">
@@ -87,7 +91,7 @@ const ServiciosAuxiliares = () => {
             </div>
             <h3 className="text-xl font-semibold text-adeka-darkBlue mb-4">Supervisión en eventos</h3>
             <p className="text-gray-600">
-              Coordinación y control de seguridad en todo tipo de celebraciones y reuniones. Garantizamos el correcto desarrollo de sus eventos con la máxima profesionalidad.
+              Coordinación y atención en todo tipo de celebraciones y reuniones. Garantizamos el correcto desarrollo de sus eventos con la máxima profesionalidad.
             </p>
           </div>
         </div>
