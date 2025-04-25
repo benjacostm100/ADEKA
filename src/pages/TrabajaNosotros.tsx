@@ -6,11 +6,14 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/components/ui/use-toast";
 import { Briefcase, Link } from 'lucide-react';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 const TrabajaNosotros = () => {
   const { toast } = useToast();
   const [acceptedPrivacy, setAcceptedPrivacy] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
+  const captchaRef = useRef(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,6 +22,15 @@ const TrabajaNosotros = () => {
       toast({
         title: "Error",
         description: "Por favor, lee y acepta la política de privacidad.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!captchaToken) {
+      toast({
+        title: "Error",
+        description: "Por favor completa el captcha antes de enviar.",
         variant: "destructive",
       });
       return;
@@ -38,6 +50,8 @@ const TrabajaNosotros = () => {
         });
         formRef.current?.reset();
         setAcceptedPrivacy(false);
+        setCaptchaToken(null);
+        captchaRef.current?.resetCaptcha();
       })
       .catch(() => {
         toast({
@@ -117,6 +131,12 @@ const TrabajaNosotros = () => {
                 <label htmlFor="mensaje">Mensaje</label>
                 <Textarea name="mensaje" id="mensaje" />
               </div>
+
+              <HCaptcha
+                sitekey="a8ea6f04-b13a-40f6-817a-28b0fd608b24"
+                onVerify={(token) => setCaptchaToken(token)}
+                ref={captchaRef}
+              />
 
               <div className="flex items-start space-x-2">
                 <Checkbox

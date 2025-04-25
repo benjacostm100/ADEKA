@@ -42,7 +42,7 @@ const AboutUs = () => {
   </div>
 
   {/* Por qué elegir ADEKA */}
-      <div className="container mx-auto flex flex-col md:flex-row items-center md:items-start gap-12 bg-gradient-to-r from-black via-gray-900 to-black p-8 pb-20">
+      <div className="container flex flex-col md:flex-row items-center md:items-start gap-12 bg-gradient-to-r from-black via-gray-900 to-black p-8 pb-20">
 
         <motion.div
           className="md:w-1/2"
