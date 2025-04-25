@@ -105,13 +105,15 @@ const SolicitarPresupuesto = () => {
                 <Checkbox id="privacidad" required />
                 <label htmlFor="privacidad" className="text-sm text-gray-600">
                   He leído y acepto la{" "}
-                  <a 
-                    href="/politica-privacidad" 
-                    onClick={openPrivacyPolicy} 
-                    className="text-adeka-gold hover:underline"
-                  >
-                    política de privacidad
-                  </a>
+                  <Link
+    to="/politica-privacidad"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-adeka-gold hover:underline"
+    onClick={openPrivacyPolicy}
+  >
+    política de privacidad
+  </Link>
                 </label>
               </div>
 
