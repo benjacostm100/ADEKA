@@ -21,7 +21,7 @@ const AboutUs = () => {
     </p>
 
     <Link to ="/empresa">
-      <button className="bg-black text-white px-6 py-2 rounded-md shadow-md hover:bg-gray-900 transition">
+      <button className="bg-black text-white px-6 py-2 rounded-md shadow-md hover:bg-gray-300 hover:text-black transition">
         Conócenos un poco más
       </button>
     </Link>

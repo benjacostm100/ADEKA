@@ -11,7 +11,7 @@ const ServiciosAuxiliares = () => {
           alt="ADEKA fondo"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-adeka-darkBlue/70 to-black/50 flex items-center justify-center">
+        <div className="absolute inset-0 bg-gradient-to-b from-adeka-darkBlue/70 to-black/50 flex items-center justify-center text-center px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-white">Servicios auxiliares de control</h2>
         </div>
      
