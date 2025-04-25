@@ -5,7 +5,9 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/components/ui/use-toast";
-import { Briefcase, Link } from 'lucide-react';
+import { Briefcase, } from 'lucide-react';
+import { Link as LinkIcon } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 const TrabajaNosotros = () => {
@@ -131,7 +133,7 @@ const TrabajaNosotros = () => {
               <div>
                 <label htmlFor="cv_link">Link al CV (Google Drive, Dropbox, etc.)</label>
                 <div className="mt-1 flex items-center">
-                  <Link className="mr-2 text-gray-400" />
+                  <LinkIcon className="mr-2 text-gray-400" />
                   <Input
                     name="cv_link"
                     id="cv_link"
@@ -161,14 +163,9 @@ const TrabajaNosotros = () => {
                 />
                 <label htmlFor="privacidad" className="text-sm text-gray-600">
                   He leído y acepto la{" "}
-                  <a
-                    href="https://tusitio.com/politica-de-privacidad"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-adeka-gold hover:underline"
-                  >
-                    política de privacidad
-                  </a>
+                  <Link to="/politica-privacidad" className="text-adeka-gold hover:underline ">
+                                    política de privacidad
+                                  </Link>
                                 </label>
               </div>
 
