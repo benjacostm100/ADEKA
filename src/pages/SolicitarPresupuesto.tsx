@@ -1,30 +1,39 @@
-import { useState } from 'react'; 
+import { useState, useRef } from 'react';  
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Mail, Phone, Smartphone } from "lucide-react";
 import { Link } from 'react-router-dom';
-import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 const SolicitarPresupuesto = () => {
   const formRef = useRef<HTMLFormElement>(null);
+  const captchaRef = useRef(null);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
+    if (!captchaToken) {
+      alert('Por favor completá el captcha antes de enviar.');
+      return;
+    }
+
     if (!formRef.current) return;
 
     emailjs.sendForm(
-      'service_n738dot',      // reemplazá esto
-      'template_0n91uzh',     // reemplazá esto
+      'service_n738dot',
+      'template_0n91uzh',
       formRef.current,
-      'KQDglcggc3HBv46cx'       // reemplazá esto
+      'KQDglcggc3HBv46cx'
     )
     .then(() => {
       alert('Presupuesto enviado correctamente');
       formRef.current?.reset();
+      setCaptchaToken(null);
+      captchaRef.current?.resetCaptcha();
     })
     .catch((error) => {
       console.error('Error al enviar:', error);
@@ -75,6 +84,12 @@ const SolicitarPresupuesto = () => {
                 <Textarea id="mensaje" name="message" required className="min-h-[150px]" />
               </div>
 
+              <HCaptcha
+                sitekey="a8ea6f04-b13a-40f6-817a-28b0fd608b24"
+                onVerify={(token) => setCaptchaToken(token)}
+                ref={captchaRef}
+              />
+
               <div className="flex items-start space-x-2">
                 <Checkbox id="privacidad" required />
                 <label htmlFor="privacidad" className="text-sm text-gray-600">
@@ -94,58 +109,34 @@ const SolicitarPresupuesto = () => {
               </Button>
             </form>
 
+            {/* Información de contacto */}
             <div className="mt-12 space-y-4">
               <h3 className="text-xl font-semibold text-adeka-darkBlue">Datos de contacto</h3>
               <div className="space-y-3 text-sm sm:text-base">
-                {/* Email */}
                 <p className="flex items-center gap-2">
                   <Mail className="text-adeka-gold" size={20} />
                   <span className="font-medium">informacionadeka@gmail.com</span>
                 </p>
-
-                {/* Teléfonos móviles */}
                 <p className="flex items-center gap-2">
                   <Smartphone className="text-adeka-gold" size={20} />
                   <span className="font-medium">
                     Móvil: 669 003 528 / 699 675 239
                   </span>
                 </p>
-
-                {/* Teléfono de oficina */}
                 <p className="flex items-center gap-2">
                   <Phone className="text-adeka-gold" size={20} />
                   <span className="font-medium">
                     Oficina: 955 875 501
                   </span>
                 </p>
-
-                {/* Dirección con link */}
                 <p className="flex items-start gap-2">
-                  <svg
-                    className="w-5 h-5 text-adeka-gold mt-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
+                  <svg className="w-5 h-5 text-adeka-gold mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
-                  <a
-                    href="https://maps.app.goo.gl/gt43rL2GJ5Q35qBU9"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:underline font-medium"
-                  >
+                  <a href="https://maps.app.goo.gl/gt43rL2GJ5Q35qBU9" target="_blank" rel="noopener noreferrer" className="hover:underline font-medium">
                     C/Garrotín Nº-3 Bj<br />Coria del Río, Sevilla
                   </a>
                 </p>
