@@ -69,18 +69,33 @@ const TrabajaNosotros = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-8">
-            <Briefcase className="mx-auto h-12 w-12 text-adeka-gold" />
-            <h1 className="text-4xl font-bold text-adeka-darkBlue mt-4 mb-4">
-              Trabaja con Nosotros
-            </h1>
-            <p className="text-lg text-gray-600">¡Únete a nuestro equipo!</p>
-          </div>
+      <div className="relative w-full">
+        {/* Fondo de imagen con cover */}
+        <div className="relative w-full h-80 md:h-80 overflow-hidden">
+          <img
+            src="/imagenes/nosotros.jpg"
+            alt="Imagen de fondo"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black opacity-50"></div> {/* Fondo oscuro */}
+        <div className="absolute inset-0 flex items-center justify-center z-10">
+          <h1 className="text-4xl font-bold text-white">Trabaja con Nosotros</h1>
+      </div>
+        </div>
+      </div>
 
+      <div className="container mx-auto px-4 pb-8 mt-12">
+        <div className="max-w-3xl mx-auto">
           <div className="bg-white rounded-lg shadow-md p-8">
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+            <div className=" flex flex-col justify-center items-center text-center mb-10">
+            <Briefcase className="h-12 w-12 text-adeka-gold" />
+            <h1 className="text-3xl font-bold text-adeka-darkBlue mt-4 mb-4">
+              Mandános tu CV
+            </h1>
+            <p className="text-lg text-adeka-darkBlue">¡Únete a nuestro equipo!</p>
+          </div>
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="nombre">Nombre</label>
