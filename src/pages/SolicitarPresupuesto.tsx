@@ -106,7 +106,7 @@ const SolicitarPresupuesto = () => {
                 <label htmlFor="privacidad" className="text-sm text-gray-600">
                   He leído y acepto la{" "}
                   <a 
-                    href="/privacidad" 
+                    href="/politica-privacidad" 
                     onClick={openPrivacyPolicy} 
                     className="text-adeka-gold hover:underline"
                   >

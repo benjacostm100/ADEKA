@@ -161,10 +161,15 @@ const TrabajaNosotros = () => {
                 />
                 <label htmlFor="privacidad" className="text-sm text-gray-600">
                   He leído y acepto la{" "}
-                  <button type="button" onClick={openPrivacyPolicy} className="text-adeka-gold hover:underline">
+                  <a
+                    href="https://tusitio.com/politica-de-privacidad"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-adeka-gold hover:underline"
+                  >
                     política de privacidad
-                  </button>
-                </label>
+                  </a>
+                                </label>
               </div>
 
               <Button type="submit" className="w-full bg-adeka-gold hover:bg-adeka-gold/90">
