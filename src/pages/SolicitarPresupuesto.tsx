@@ -56,7 +56,7 @@ const SolicitarPresupuesto = () => {
         />
         <div className="absolute inset-0 bg-black opacity-50"></div> {/* Fondo oscuro encima de la imagen */}
         <div className="absolute inset-0 flex items-center justify-center z-10">
-          <h1 className="text-4xl font-bold text-white">Pidenos presupuesto</h1>
+          <h1 className="text-4xl font-bold text-white">Pídenos presupuesto</h1>
         </div>
       </div>
 

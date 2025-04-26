@@ -19,7 +19,7 @@ const TopBar = () => {
       }`}
     >
       <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
-        <span className="block">📞 +34 669 321 00 35 28</span>
+        <span className="block">📞+34 669 003 528</span>
         <span className="hidden sm:block">✉️ informacionadeka@gmail.com</span>
       </div>
       <a
