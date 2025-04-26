@@ -62,7 +62,7 @@ const JardineriaServicios = () => {
       <div className="text-adeka-gold mb-4">
         <Flower size={36} />
       </div>
-      <h3 className="text-xl font-semibold text-adeka-black mb-4">Diseño personalizado</h3>
+      <h3 className="text-xl font-semibold text-adeka-darkBlue mb-4">Diseño personalizado</h3>
       <p className="text-gray-600">
         Creamos jardines a medida, teniendo en cuenta sus gustos, el entorno y las condiciones climáticas locales.
       </p>

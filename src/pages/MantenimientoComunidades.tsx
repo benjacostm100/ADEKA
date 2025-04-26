@@ -57,7 +57,7 @@ const MantenimientoComunidades = () => {
             <div className="text-adeka-gold mb-4">
               <Hammer size={36} />
             </div>
-            <h3 className="text-xl font-semibold text-adeka-black mb-4">Limpieza</h3>
+            <h3 className="text-xl font-semibold text-adeka-darkBlue mb-4">Limpieza</h3>
             <p className="text-gray-600">
               Servicio integral de limpieza para zonas comunes, garantizando espacios impecables. Incluye limpieza de escaleras, portales, ascensores y demás áreas compartidas.
             </p>

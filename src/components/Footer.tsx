@@ -103,11 +103,12 @@ const Footer = () => {
           </div>
         </div>
         
-        {/* Copyright y créditos */}
-        <div className="border-t border-gray-700 mt-10 pt-6">
-  <div className="flex flex-col md:flex-row items-center justify-center relative">
-    {/* Créditos a la izquierda */}
-    <p className="text-adeka-silver text-sm absolute left-0 text-center md:text-left">
+         {/* Copyright y créditos */}
+<div className="border-t border-gray-700 mt-10 pt-6">
+  <div className="flex flex-col md:flex-row md:items-center md:justify-center relative">
+    
+    {/* Créditos */}
+    <p className="text-adeka-silver text-sm text-center md:text-left mb-2 md:mb-0 md:absolute md:left-0">
       Diseñado por{' '}
       <a href="https://xn--estiloydiseo-khb.com/" target="_blank" rel="noopener noreferrer" className="hover:text-adeka-gold">
         Estilo
@@ -118,10 +119,11 @@ const Footer = () => {
       </a>
     </p>
 
-    {/* Derechos reservados en el centro */}
+    {/* Derechos reservados */}
     <p className="text-adeka-silver text-sm text-center">
       © {new Date().getFullYear()} ADEKA. Todos los derechos reservados.
     </p>
+
   </div>
 </div>
 

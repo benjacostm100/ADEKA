@@ -62,7 +62,7 @@ const ServiciosAuxiliares = () => {
             <div className="text-adeka-gold mb-4">
               <Shield size={36} />
             </div>
-            <h3 className="text-xl font-semibold text-adeka-black mb-4">Control de accesos</h3>
+            <h3 className="text-xl font-semibold text-adeka-darkBlue mb-4">Control de accesos</h3>
             <p className="text-gray-600">
               Gestión profesional y eficiente de entradas y salidas para garantizar el máximo control en sus instalaciones. Nuestro personal está altamente capacitado para controlar el flujo de personas y vehículos.
             </p>
