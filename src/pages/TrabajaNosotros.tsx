@@ -9,7 +9,6 @@ import { Briefcase, Upload } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 
-
 const TrabajaNosotros = () => {
   const { toast } = useToast();
   const [acceptedPrivacy, setAcceptedPrivacy] = useState(false);
@@ -40,11 +39,12 @@ const TrabajaNosotros = () => {
     }
 
     if (formRef.current) {
+      // Enviar el formulario con emailjs
       emailjs.sendForm(
-        'service_n738dot',
-        'template_nlstdwe',
-        formRef.current,
-        'KQDglcggc3HBv46cx'
+        'service_n738dot', // ID del servicio
+        'template_nlstdwe', // ID del template
+        formRef.current, // El formulario HTML como referencia
+        'KQDglcggc3HBv46cx' // Tu clave pública de EmailJS
       )
       .then(() => {
         toast({
@@ -64,8 +64,6 @@ const TrabajaNosotros = () => {
         });
       });
     }
-    
-
   };
 
   return (
@@ -169,7 +167,6 @@ const TrabajaNosotros = () => {
                   </div>
                 </div>
               </div>
-
 
               <div>
                 <label htmlFor="mensaje">Mensaje</label>
