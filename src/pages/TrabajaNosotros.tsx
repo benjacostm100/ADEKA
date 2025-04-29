@@ -1,3 +1,4 @@
+// ...importaciones sin cambios
 import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { Button } from "@/components/ui/button";
@@ -15,25 +16,8 @@ const TrabajaNosotros = () => {
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
   const captchaRef = useRef(null);
-  const [cvFile, setCvFile] = useState<File | null>(null);
   const [cvFileName, setCvFileName] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const uploadFileToFileIO = async (file: File): Promise<string | null> => {
-    const formData = new FormData();
-    formData.append("file", file);
-
-    try {
-      const response = await fetch("https://file.io", {
-        method: "POST",
-        body: formData,
-      });
-      const data = await response.json();
-      return data.success ? data.link : null;
-    } catch (error) {
-      return null;
-    }
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -59,27 +43,6 @@ const TrabajaNosotros = () => {
       return;
     }
 
-    let cvLink = "";
-    if (cvFile) {
-      const uploaded = await uploadFileToFileIO(cvFile);
-      if (!uploaded) {
-        toast({
-          title: "Error",
-          description: "No se pudo subir el archivo CV.",
-          variant: "destructive",
-        });
-        setIsSubmitting(false);
-        return;
-      }
-      cvLink = uploaded;
-    }
-
-    const cvLinkInput = document.createElement("input");
-    cvLinkInput.type = "hidden";
-    cvLinkInput.name = "cvLink";
-    cvLinkInput.value = cvLink;
-    formRef.current?.appendChild(cvLinkInput);
-
     try {
       if (formRef.current) {
         await emailjs.sendForm(
@@ -97,7 +60,6 @@ const TrabajaNosotros = () => {
         formRef.current.reset();
         setAcceptedPrivacy(false);
         setCaptchaToken(null);
-        setCvFile(null);
         setCvFileName(null);
         captchaRef.current?.resetCaptcha();
       }
@@ -179,10 +141,11 @@ const TrabajaNosotros = () => {
                         <span>Subir archivo</span>
                         <input
                           id="cv"
-                          name="cvUpload"
+                          name="cv" // 👈 CAMBIO: este name debe coincidir con {{cv}} en EmailJS
                           type="file"
                           className="sr-only"
                           accept=".pdf,.doc,.docx"
+                          required
                           onChange={(e) => {
                             const file = e.target.files?.[0];
                             if (file && file.size > 3 * 1024 * 1024) {
@@ -194,7 +157,6 @@ const TrabajaNosotros = () => {
                               e.target.value = "";
                               return;
                             }
-                            setCvFile(file || null);
                             setCvFileName(file?.name || null);
                           }}
                         />
