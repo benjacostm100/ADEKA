@@ -5,8 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/components/ui/use-toast";
-import { Briefcase, } from 'lucide-react';
-import { Link as LinkIcon } from 'lucide-react';
+import { Briefcase, Upload } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 
@@ -40,10 +39,10 @@ const TrabajaNosotros = () => {
 
     if (formRef.current) {
       emailjs.sendForm(
-        'service_n738dot',         // Reemplazar por tu SERVICE ID
-        'template_nlstdwe',        // Reemplazar por tu TEMPLATE ID
+        'service_n738dot',
+        'template_nlstdwe',
         formRef.current,
-        'KQDglcggc3HBv46cx'             // Reemplazar por tu PUBLIC KEY
+        'KQDglcggc3HBv46cx'
       )
       .then(() => {
         toast({
@@ -65,24 +64,19 @@ const TrabajaNosotros = () => {
     }
   };
 
-  const openPrivacyPolicy = () => {
-    window.open("/politica-privacidad", "_blank");
-  };
-
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="relative w-full">
-        {/* Fondo de imagen con cover */}
         <div className="relative w-full h-80 md:h-80 overflow-hidden">
           <img
             src="/imagenes/nosotros.jpg"
             alt="Imagen de fondo"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black opacity-50"></div> {/* Fondo oscuro */}
-        <div className="absolute inset-0 flex items-center justify-center z-10">
-          <h1 className="text-4xl font-bold text-white">Trabaja con Nosotros</h1>
-      </div>
+          <div className="absolute inset-0 bg-black opacity-50"></div>
+          <div className="absolute inset-0 flex items-center justify-center z-10">
+            <h1 className="text-4xl font-bold text-white">Trabaja con Nosotros</h1>
+          </div>
         </div>
       </div>
 
@@ -90,13 +84,13 @@ const TrabajaNosotros = () => {
         <div className="max-w-3xl mx-auto">
           <div className="bg-white rounded-lg shadow-md p-8">
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
-            <div className=" flex flex-col justify-center items-center text-center mb-10">
-            <Briefcase className="h-12 w-12 text-adeka-gold" />
-            <h1 className="text-3xl font-bold text-adeka-darkBlue mt-4 mb-4">
-              Mandános tu CV
-            </h1>
-            <p className="text-lg text-adeka-darkBlue">¡Únete a nuestro equipo!</p>
-          </div>
+              <div className="flex flex-col justify-center items-center text-center mb-10">
+                <Briefcase className="h-12 w-12 text-adeka-gold" />
+                <h1 className="text-3xl font-bold text-adeka-darkBlue mt-4 mb-4">
+                  Mandános tu CV
+                </h1>
+                <p className="text-lg text-adeka-darkBlue">¡Únete a nuestro equipo!</p>
+              </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -130,17 +124,33 @@ const TrabajaNosotros = () => {
                 <Input type="tel" name="telefono" id="telefono" required />
               </div>
 
+              {/* NUEVO INPUT: CARGA DE ARCHIVO */}
               <div>
-                <label htmlFor="cv_link">Link al CV (Google Drive, Dropbox, etc.)</label>
-                <div className="mt-1 flex items-center">
-                  <LinkIcon className="mr-2 text-gray-400" />
-                  <Input
-                    name="cv_link"
-                    id="cv_link"
-                    type="url"
-                    placeholder="https://drive.google.com/..."
-                    required
-                  />
+                <label htmlFor="cv" className="block text-sm font-medium text-gray-700 mb-1">
+                  Adjuntar CV (máx. 3MB)
+                </label>
+                <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                  <div className="space-y-1 text-center">
+                    <Upload className="mx-auto h-12 w-12 text-gray-400" />
+                    <div className="flex text-sm text-gray-600 justify-center">
+                      <label
+                        htmlFor="cv"
+                        className="relative cursor-pointer bg-white rounded-md font-medium text-adeka-gold hover:underline focus-within:outline-none"
+                      >
+                        <span>Subir un archivo</span>
+                        <input
+                          id="cv"
+                          name="cv"
+                          type="file"
+                          className="sr-only"
+                          accept=".pdf,.doc,.docx"
+                          required
+                        />
+                      </label>
+                      <p className="pl-1">o arrastra y suelta</p>
+                    </div>
+                    <p className="text-xs text-gray-500">PDF, DOC hasta 3MB</p>
+                  </div>
                 </div>
               </div>
 
@@ -163,10 +173,10 @@ const TrabajaNosotros = () => {
                 />
                 <label htmlFor="privacidad" className="text-sm text-gray-600">
                   He leído y acepto la{" "}
-                  <Link to="/politica-privacidad" className="text-adeka-gold hover:underline ">
-                                    política de privacidad
-                                  </Link>
-                                </label>
+                  <Link to="/politica-privacidad" className="text-adeka-gold hover:underline">
+                    política de privacidad
+                  </Link>
+                </label>
               </div>
 
               <Button type="submit" className="w-full bg-adeka-gold hover:bg-adeka-gold/90">
