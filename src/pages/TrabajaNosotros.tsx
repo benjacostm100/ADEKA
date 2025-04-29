@@ -9,12 +9,14 @@ import { Briefcase, Upload } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 
+
 const TrabajaNosotros = () => {
   const { toast } = useToast();
   const [acceptedPrivacy, setAcceptedPrivacy] = useState(false);
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
   const captchaRef = useRef(null);
+  const [cvFileName, setCvFileName] = useState<string | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -62,6 +64,8 @@ const TrabajaNosotros = () => {
         });
       });
     }
+    
+
   };
 
   return (
@@ -124,7 +128,9 @@ const TrabajaNosotros = () => {
                 <Input type="tel" name="telefono" id="telefono" required />
               </div>
 
-              {/* NUEVO INPUT: CARGA DE ARCHIVO */}
+              {/* Input oculto para la hora */}
+              <input type="hidden" name="time" value={new Date().toLocaleString()} />
+
               <div>
                 <label htmlFor="cv" className="block text-sm font-medium text-gray-700 mb-1">
                   Adjuntar CV (máx. 3MB)
@@ -145,14 +151,25 @@ const TrabajaNosotros = () => {
                           className="sr-only"
                           accept=".pdf,.doc,.docx"
                           required
+                          onChange={(e) => {
+                            const file = e.target.files?.[0];
+                            setCvFileName(file ? file.name : null);
+                          }}
                         />
                       </label>
                       <p className="pl-1">o arrastra y suelta</p>
                     </div>
                     <p className="text-xs text-gray-500">PDF, DOC hasta 3MB</p>
+
+                    {cvFileName && (
+                      <p className="mt-2 text-sm text-green-600">
+                        Archivo cargado: <span className="font-medium">{cvFileName}</span>
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
+
 
               <div>
                 <label htmlFor="mensaje">Mensaje</label>
