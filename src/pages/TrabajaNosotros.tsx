@@ -22,88 +22,72 @@ const TrabajaNosotros = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
+  
     if (!acceptedPrivacy) {
-      toast({
-        title: "Error",
-        description: "Por favor, acepta la política de privacidad.",
-        variant: "destructive",
-      });
+      toast({ title: "Error", description: "Por favor, acepta la política de privacidad.", variant: "destructive" });
       setIsSubmitting(false);
       return;
     }
-
     if (!captchaToken) {
-      toast({
-        title: "Error",
-        description: "Completa el captcha antes de enviar.",
-        variant: "destructive",
-      });
+      toast({ title: "Error", description: "Completa el captcha antes de enviar.", variant: "destructive" });
       setIsSubmitting(false);
       return;
     }
-
+  
     try {
-      // Obtener datos del formulario
+      // 1. Subir CV a Supabase
       const formData = new FormData(formRef.current!);
-      const cvFile = formData.get('cv') as File | null;
-
-      // 1. Subir CV a Supabase Storage
-      let cvUrl = '';
+      const cvFile = formData.get("cv") as File | null;
+      let cvUrl = "";
       if (cvFile && cvFile.size > 0) {
         if (cvFile.size > 3 * 1024 * 1024) {
-          throw new Error('El archivo excede el límite de 3MB');
+          throw new Error("El archivo excede el límite de 3MB");
         }
         const fileName = `${Date.now()}_${cvFile.name}`;
         const { data, error } = await supabase.storage
-          .from('cvs')
+          .from("cvs")
           .upload(fileName, cvFile);
         if (error) throw error;
         cvUrl = supabase.storage
-          .from('cvs')
+          .from("cvs")
           .getPublicUrl(data.path)
           .data.publicUrl;
       }
-
+  
       // 2. Enviar email con EmailJS
       await emailjs.send(
-        'service_n738dot',
-        'template_nlstdwe',
+        "service_n738dot",
+        "template_nlstdwe",
         {
-          nombre: formData.get('nombre')?.toString(),
-          apellido: formData.get('apellido')?.toString(),
-          profesion: formData.get('profesion')?.toString(),
-          email: formData.get('email')?.toString(),
-          telefono: formData.get('telefono')?.toString(),
-          mensaje: formData.get('mensaje')?.toString(),
+          nombre: formData.get("nombre")?.toString(),
+          apellido: formData.get("apellido")?.toString(),
+          profesion: formData.get("profesion")?.toString(),
+          email: formData.get("email")?.toString(),
+          telefono: formData.get("telefono")?.toString(),
+          mensaje: formData.get("mensaje")?.toString(),
           time: new Date().toLocaleString(),
-          cv: cvUrl || 'No adjuntado',
+          cv: cvUrl || "No adjuntado",
         },
-        'KQDglcggc3HBv46cx'
+        "KQDglcggc3HBv46cx"
       );
-
-      toast({
-        title: "¡Enviado!",
-        description: "Tu mensaje ha sido enviado correctamente.",
-      });
-
-      formRef.current?.reset();
+  
+      toast({ title: "¡Enviado!", description: "Tu mensaje ha sido enviado correctamente." });
+  
+      // Reset form
+      formRef.current!.reset();
       setAcceptedPrivacy(false);
       setCaptchaToken(null);
       setCvFileName(null);
       captchaRef.current?.resetCaptcha();
+  
     } catch (error: unknown) {
-      // Manejar errores con tipo seguro
-      const message = error instanceof Error ? error.message : 'Hubo un problema al enviar el formulario.';
-      toast({
-        title: "Error",
-        description: message,
-        variant: "destructive",
-      });
+      const message = error instanceof Error ? error.message : "Hubo un problema al enviar el formulario.";
+      toast({ title: "Error", description: message, variant: "destructive" });
     } finally {
       setIsSubmitting(false);
     }
   };
+  
 
   return (
     <div className="min-h-screen bg-gray-50">
