@@ -15,8 +15,25 @@ const TrabajaNosotros = () => {
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
   const captchaRef = useRef(null);
+  const [cvFile, setCvFile] = useState<File | null>(null);
   const [cvFileName, setCvFileName] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const uploadFileToFileIO = async (file: File): Promise<string | null> => {
+    const formData = new FormData();
+    formData.append("file", file);
+
+    try {
+      const response = await fetch("https://file.io", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await response.json();
+      return data.success ? data.link : null;
+    } catch (error) {
+      return null;
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,6 +59,27 @@ const TrabajaNosotros = () => {
       return;
     }
 
+    let cvLink = "";
+    if (cvFile) {
+      const uploaded = await uploadFileToFileIO(cvFile);
+      if (!uploaded) {
+        toast({
+          title: "Error",
+          description: "No se pudo subir el archivo CV.",
+          variant: "destructive",
+        });
+        setIsSubmitting(false);
+        return;
+      }
+      cvLink = uploaded;
+    }
+
+    const cvLinkInput = document.createElement("input");
+    cvLinkInput.type = "hidden";
+    cvLinkInput.name = "cvLink";
+    cvLinkInput.value = cvLink;
+    formRef.current?.appendChild(cvLinkInput);
+
     try {
       if (formRef.current) {
         await emailjs.sendForm(
@@ -59,6 +97,7 @@ const TrabajaNosotros = () => {
         formRef.current.reset();
         setAcceptedPrivacy(false);
         setCaptchaToken(null);
+        setCvFile(null);
         setCvFileName(null);
         captchaRef.current?.resetCaptcha();
       }
@@ -75,17 +114,11 @@ const TrabajaNosotros = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="relative w-full">
-        <div className="relative w-full h-80 md:h-80 overflow-hidden">
-          <img
-            src="/imagenes/nosotros.jpg"
-            alt="Imagen de fondo"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black opacity-50"></div>
-          <div className="absolute inset-0 flex items-center justify-center z-10">
-            <h1 className="text-4xl font-bold text-white">Trabaja con Nosotros</h1>
-          </div>
+      <div className="relative w-full h-80 overflow-hidden">
+        <img src="/imagenes/nosotros.jpg" alt="Imagen de fondo" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-black opacity-50" />
+        <div className="absolute inset-0 flex items-center justify-center z-10">
+          <h1 className="text-4xl font-bold text-white">Trabaja con Nosotros</h1>
         </div>
       </div>
 
@@ -93,11 +126,9 @@ const TrabajaNosotros = () => {
         <div className="max-w-3xl mx-auto">
           <div className="bg-white rounded-lg shadow-md p-8">
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
-              <div className="flex flex-col justify-center items-center text-center mb-10">
+              <div className="flex flex-col items-center text-center mb-10">
                 <Briefcase className="h-12 w-12 text-adeka-gold" />
-                <h1 className="text-3xl font-bold text-adeka-darkBlue mt-4 mb-4">
-                  Contáctanos
-                </h1>
+                <h1 className="text-3xl font-bold text-adeka-darkBlue mt-4 mb-4">Contáctanos</h1>
                 <p className="text-lg text-adeka-darkBlue">¡Queremos conocerte!</p>
               </div>
 
@@ -114,12 +145,7 @@ const TrabajaNosotros = () => {
 
               <div>
                 <label htmlFor="profesion">Profesión</label>
-                <select 
-                  name="profesion" 
-                  id="profesion" 
-                  className="w-full border rounded px-3 py-2"
-                  defaultValue=""
-                >
+                <select name="profesion" id="profesion" className="w-full border rounded px-3 py-2" defaultValue="">
                   <option value="">No especificado</option>
                   <option value="limpieza">Limpieza</option>
                   <option value="recepcion">Recepción</option>
@@ -141,21 +167,19 @@ const TrabajaNosotros = () => {
               <input type="hidden" name="time" value={new Date().toLocaleString()} />
 
               <div>
-                <label htmlFor="cv" className="block text-sm font-medium text-gray-700 mb-1">
-                  Adjuntar CV (opcional)
-                </label>
+                <label htmlFor="cv" className="block text-sm font-medium text-gray-700 mb-1">Adjuntar CV</label>
                 <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                   <div className="space-y-1 text-center">
                     <Upload className="mx-auto h-12 w-12 text-gray-400" />
                     <div className="flex text-sm text-gray-600 justify-center">
                       <label
                         htmlFor="cv"
-                        className="relative cursor-pointer bg-white rounded-md font-medium text-adeka-gold hover:underline focus-within:outline-none"
+                        className="relative cursor-pointer bg-white rounded-md font-medium text-adeka-gold hover:underline"
                       >
                         <span>Subir archivo</span>
                         <input
                           id="cv"
-                          name="cv"
+                          name="cvUpload"
                           type="file"
                           className="sr-only"
                           accept=".pdf,.doc,.docx"
@@ -170,7 +194,8 @@ const TrabajaNosotros = () => {
                               e.target.value = "";
                               return;
                             }
-                            setCvFileName(file ? file.name : null);
+                            setCvFile(file || null);
+                            setCvFileName(file?.name || null);
                           }}
                         />
                       </label>
@@ -213,8 +238,8 @@ const TrabajaNosotros = () => {
                 </label>
               </div>
 
-              <Button 
-                type="submit" 
+              <Button
+                type="submit"
                 className="w-full bg-adeka-gold hover:bg-adeka-gold/90"
                 disabled={isSubmitting}
               >
