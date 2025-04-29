@@ -1,5 +1,4 @@
-// ...importaciones sin cambios
-import { useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,6 +8,7 @@ import { useToast } from "@/components/ui/use-toast";
 import { Briefcase, Upload } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
+import { supabase } from '@/lib/supabase';  // Añadido import de Supabase
 
 const TrabajaNosotros = () => {
   const { toast } = useToast();
@@ -44,29 +44,60 @@ const TrabajaNosotros = () => {
     }
 
     try {
-      if (formRef.current) {
-        await emailjs.sendForm(
-          'service_n738dot',
-          'template_nlstdwe',
-          formRef.current,
-          'KQDglcggc3HBv46cx'
-        );
+      // Obtener datos del formulario
+      const formData = new FormData(formRef.current!);
+      const cvFile = formData.get('cv') as File | null;
 
-        toast({
-          title: "¡Enviado!",
-          description: "Tu mensaje ha sido enviado correctamente.",
-        });
-
-        formRef.current.reset();
-        setAcceptedPrivacy(false);
-        setCaptchaToken(null);
-        setCvFileName(null);
-        captchaRef.current?.resetCaptcha();
+      // 1. Subir CV a Supabase Storage
+      let cvUrl = '';
+      if (cvFile && cvFile.size > 0) {
+        if (cvFile.size > 3 * 1024 * 1024) {
+          throw new Error('El archivo excede el límite de 3MB');
+        }
+        const fileName = `${Date.now()}_${cvFile.name}`;
+        const { data, error } = await supabase.storage
+          .from('cvs')
+          .upload(fileName, cvFile);
+        if (error) throw error;
+        cvUrl = supabase.storage
+          .from('cvs')
+          .getPublicUrl(data.path)
+          .data.publicUrl;
       }
-    } catch (error) {
+
+      // 2. Enviar email con EmailJS
+      await emailjs.send(
+        'service_n738dot',
+        'template_nlstdwe',
+        {
+          nombre: formData.get('nombre')?.toString(),
+          apellido: formData.get('apellido')?.toString(),
+          profesion: formData.get('profesion')?.toString(),
+          email: formData.get('email')?.toString(),
+          telefono: formData.get('telefono')?.toString(),
+          mensaje: formData.get('mensaje')?.toString(),
+          time: new Date().toLocaleString(),
+          cv: cvUrl || 'No adjuntado',
+        },
+        'KQDglcggc3HBv46cx'
+      );
+
+      toast({
+        title: "¡Enviado!",
+        description: "Tu mensaje ha sido enviado correctamente.",
+      });
+
+      formRef.current?.reset();
+      setAcceptedPrivacy(false);
+      setCaptchaToken(null);
+      setCvFileName(null);
+      captchaRef.current?.resetCaptcha();
+    } catch (error: unknown) {
+      // Manejar errores con tipo seguro
+      const message = error instanceof Error ? error.message : 'Hubo un problema al enviar el formulario.';
       toast({
         title: "Error",
-        description: "Hubo un problema al enviar el formulario.",
+        description: message,
         variant: "destructive",
       });
     } finally {
@@ -141,7 +172,7 @@ const TrabajaNosotros = () => {
                         <span>Subir archivo</span>
                         <input
                           id="cv"
-                          name="cv" // 👈 CAMBIO: este name debe coincidir con {{cv}} en EmailJS
+                          name="cv"
                           type="file"
                           className="sr-only"
                           accept=".pdf,.doc,.docx"
@@ -193,7 +224,7 @@ const TrabajaNosotros = () => {
                   required
                 />
                 <label htmlFor="privacidad" className="text-sm text-gray-600">
-                  Acepto la{" "}
+                  Acepto la{' '}
                   <Link to="/politica-privacidad" className="text-adeka-gold hover:underline">
                     política de privacidad *
                   </Link>
