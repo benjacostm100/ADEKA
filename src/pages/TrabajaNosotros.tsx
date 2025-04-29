@@ -39,6 +39,10 @@ const TrabajaNosotros = () => {
     }
 
     if (formRef.current) {
+      console.log(formRef.current);
+    }
+
+    if (formRef.current) {
       // Enviar el formulario con emailjs
       emailjs.sendForm(
         'service_n738dot', // ID del servicio
@@ -148,7 +152,6 @@ const TrabajaNosotros = () => {
                           type="file"
                           className="sr-only"
                           accept=".pdf,.doc,.docx"
-                          required
                           onChange={(e) => {
                             const file = e.target.files?.[0];
                             setCvFileName(file ? file.name : null);
