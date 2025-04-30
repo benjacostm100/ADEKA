@@ -19,6 +19,11 @@ import PoliticaSeguridad from "./pages/PoliticaSeguridad";
 import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
 import Empresa from "./pages/Empresa";
 import { useEffect } from "react";
+import Sevilla from "@/pages/Sevilla";
+import DosHermanas from "@/pages/DosHermanas";
+import Alcala from "@/pages/Alcalaguadaira";
+import LaRinconada from "@/pages/LaRinconada";
+import Utrera from "@/pages/Utrera";
 
 const queryClient = new QueryClient();
 
@@ -63,6 +68,11 @@ const App = () => (
               <Route path="/politica-seguridad" element={<PoliticaSeguridad />} />
               <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />
               <Route path="/empresa" element={<Empresa />} />
+              <Route path="/sevilla" element={<Sevilla />} />
+              <Route path="/dos-hermanas" element={<DosHermanas />} />
+              <Route path="/alcala-de-guadaira" element={<Alcala />} />
+              <Route path="/la-rinconada" element={<LaRinconada />} />
+              <Route path="/utrera" element={<Utrera />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </MainContent>
