@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-const Alcala = () => {
+const AlcalaGuadaira = () => {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero */}
@@ -77,4 +77,4 @@ const Alcala = () => {
   );
 };
 
-export default Alcala;
+export default AlcalaGuadaira;
