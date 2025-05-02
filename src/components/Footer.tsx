@@ -103,35 +103,34 @@ const Footer = () => {
           </div>
         </div>
         
-         {/* Copyright y créditos */}
         <div className="border-t border-gray-700 mt-10 pt-6">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-center relative">
-            
-            {/* Créditos */}
-            <p className="text-adeka-silver text-sm text-center md:text-left mb-2 md:mb-0 md:absolute md:left-0">
-              Diseñado por{' '}
-              <a href="https://xn--estiloydiseo-khb.com/" target="_blank" rel="noopener noreferrer" className="hover:text-adeka-gold">
-                Estilo
-              </a>
-              {' '}y{' '}
-              <a href="https://estiloydisenoweb.es/" target="_blank" rel="noopener noreferrer" className="hover:text-adeka-gold">
-                Diseño
-              </a>
-            </p>
+  <div className="relative flex flex-col md:flex-row md:items-center md:justify-center">
+    
+    {/* Créditos */}
+    <p className="text-adeka-silver text-sm text-center md:text-left md:absolute md:left-0">
+      Diseñado por{' '}
+      <a href="https://xn--estiloydiseo-khb.com/" target="_blank" rel="noopener noreferrer" className="hover:text-adeka-gold">
+        Estilo
+      </a>{' '}y{' '}
+      <a href="https://estiloydisenoweb.es/" target="_blank" rel="noopener noreferrer" className="hover:text-adeka-gold">
+        Diseño
+      </a>
+    </p>
 
-            {/* Derechos reservados */}
-            <p className="text-adeka-silver text-sm text-center">
-              © {new Date().getFullYear()} ADEKA. Todos los derechos reservados.
-            </p>
+    {/* Derechos reservados */}
+    <p className="text-adeka-silver text-sm text-center md:mx-auto">
+      © {new Date().getFullYear()} ADEKA. Todos los derechos reservados.
+    </p>
 
-            {/* Código de barras */}
-            <img 
-              src="./imagenes/codigo.jpg" 
-              alt="Código de barras" 
-              className="absolute right-20 h-24 ml-3" 
-            />
-          </div>
-        </div>
+    {/* Código de barras */}
+    <img 
+      src="./imagenes/codigo.jpg" 
+      alt="Código de barras" 
+      className="h-24 mx-auto mt-4 md:mt-0 md:absolute md:right-20"
+    />
+  </div>
+</div>
+
       </div>
     </footer>
   );
