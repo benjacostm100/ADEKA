@@ -210,7 +210,7 @@ const TrabajaNosotros = () => {
                 <label htmlFor="privacidad" className="text-sm text-gray-600">
                   Acepto la{' '}
                   <Link to="/politica-privacidad" className="text-adeka-gold hover:underline">
-                    política de privacidad *
+                    política de privacidad 
                   </Link>
                 </label>
               </div>
