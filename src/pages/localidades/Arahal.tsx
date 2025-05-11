@@ -6,51 +6,70 @@ export default function Arahal() {
   return (
     <>
       <Navbar />
-      <main className="p-6 max-w-4xl mx-auto space-y-8">
+      <main className="p-6 max-w-5xl mx-auto space-y-12">
         <section className="text-center">
-          <h1 className="text-3xl font-bold">Servicios en Arahal</h1>
-          <p className="mt-2 text-lg">
-            Empresa de servicios integrales en Arahal especializada en{' '}
+          <h1 className="text-4xl font-bold text-gray-800">Servicios en Arahal</h1>
+          <p className="mt-4 text-lg text-gray-700">
+            Empresa de <strong>servicios integrales en Arahal</strong> especializada en{' '}
             <strong>portería 24 horas</strong>, <strong>jardinería</strong> y{' '}
-            <strong>mantenimiento preventivo</strong>. Ofrecemos soluciones
-            adaptadas a comunidades, empresas y eventos.
+            <strong>mantenimiento preventivo</strong>. Soluciones a medida para comunidades,
+            empresas y eventos.
           </p>
         </section>
 
-        <section className="grid md:grid-cols-3 gap-4">
-          <img src="/imagenes/compromiso2.jpg" alt="Compromiso y seguridad" className="rounded-xl shadow" />
-          <img src="/imagenes/mantenimiento.jpg" alt="Mantenimiento integral en Arahal" className="rounded-xl shadow" />
-          <img src="/imagenes/jardineria4.jpg" alt="Jardinería profesional" className="rounded-xl shadow" />
+        <section className="grid md:grid-cols-3 gap-6">
+          <img
+            src="/imagenes/security4.jpg"
+            alt="Seguridad profesional en Arahal"
+            className="rounded-2xl shadow-lg object-cover w-full h-56"
+          />
+          <img
+            src="/imagenes/mantenimiento.jpg"
+            alt="Mantenimiento integral en Arahal"
+            className="rounded-2xl shadow-lg object-cover w-full h-56"
+          />
+          <img
+            src="/imagenes/jardineria4.jpg"
+            alt="Jardinería profesional en Arahal"
+            className="rounded-2xl shadow-lg object-cover w-full h-56"
+          />
         </section>
 
-        <section className="space-y-4">
-          <h2 className="text-2xl font-semibold">Portería y Control de Accesos</h2>
-          <p>
-            Contamos con <strong>porteros profesionales en Arahal</strong>,
-            especializados en <strong>control de accesos</strong>,
-            <strong>vigilancia privada</strong> y <strong>servicio de conserjería</strong>.
-            Ideal para comunidades, oficinas y eventos.
-          </p>
+        <section className="space-y-6 text-gray-800">
+          <div>
+            <h2 className="text-2xl font-semibold">Portería y Control de Accesos</h2>
+            <p className="mt-2">
+              Ofrecemos <strong>porteros profesionales en Arahal</strong> para
+              <strong> comunidades</strong>, <strong>eventos</strong> y <strong>oficinas</strong>.
+              Especialistas en <strong>control de accesos</strong>, <strong>vigilancia privada</strong>
+              y <strong>conserjería</strong>, brindando seguridad y confianza.
+            </p>
+          </div>
 
-          <h2 className="text-2xl font-semibold">Mantenimiento Integral</h2>
-          <p>
-            Brindamos <strong>mantenimiento de edificios en Arahal</strong>,
-            incluyendo <strong>mantenimiento eléctrico</strong>,{' '}
-            <strong>fontanería</strong>, y <strong>reparaciones generales</strong>.
-            Nuestro equipo garantiza un <strong>servicio de mantenimiento urgente</strong> y efectivo.
-          </p>
+          <div>
+            <h2 className="text-2xl font-semibold">Mantenimiento Integral</h2>
+            <p className="mt-2">
+              Realizamos <strong>mantenimiento de edificios</strong>, <strong>locales</strong>,
+              <strong>colegios</strong> y <strong>oficinas</strong>. Nuestro equipo se encarga de
+              <strong>fontanería</strong>, <strong>electricidad</strong> y
+              <strong>reparaciones generales</strong> con eficiencia y rapidez.
+            </p>
+          </div>
 
-          <h2 className="text-2xl font-semibold">Jardinería y Espacios Verdes</h2>
-          <p>
-            Servicio de <strong>jardinería profesional en Arahal</strong>: poda de árboles,
-            mantenimiento de jardines, <strong>césped artificial</strong>,
-            <strong>riegos automáticos</strong> y más.
-          </p>
+          <div>
+            <h2 className="text-2xl font-semibold">Jardinería y Espacios Verdes</h2>
+            <p className="mt-2">
+              Servicios de <strong>jardinería profesional en Arahal</strong> incluyendo{' '}
+              <strong>mantenimiento de zonas verdes</strong>, <strong>podas</strong>,{' '}
+              <strong>riego automático</strong>, <strong>césped artificial</strong> y más.
+              Embellecemos cualquier espacio con soluciones sostenibles.
+            </p>
+          </div>
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold mt-8">¿Por qué elegirnos en Arahal?</h2>
-          <ul className="list-disc list-inside mt-2 space-y-1">
+          <h2 className="text-xl font-semibold mt-10 text-gray-800">¿Por qué elegirnos en Arahal?</h2>
+          <ul className="list-disc list-inside mt-4 space-y-2 text-gray-700">
             <li>Porteros en eventos deportivos y fiestas</li>
             <li>Empresas multiservicios con personal capacitado</li>
             <li>Jardineros económicos y sostenibles</li>

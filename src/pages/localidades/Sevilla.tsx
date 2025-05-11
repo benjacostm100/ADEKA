@@ -7,8 +7,6 @@ import { Link } from "react-router-dom";
 const Sevilla = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <Hero />
-
       {/* Servicios (incluido directamente en HTML) */}
       <section className="bg-white py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">

@@ -27,13 +27,13 @@ import Arahal from "./pages/localidades/Arahal";
 import Bormujos from "./pages/localidades/Bormujos";
 import Carmona from "./pages/localidades/Carmona";
 import CoriaDelRio from "./pages/localidades/Coria-del-rio";
-import Ecija from "./pages/localidades/ecija";
-import Lebrija from "./pages/localidades/lebrija";
-import Marchena from "./pages/localidades/marchena";
-import Osuna from "./pages/localidades/osuna";
+import Ecija from "./pages/localidades/Ecija";
+import Lebrija from "./pages/localidades/Lebrija";
+import Marchena from "./pages/localidades/Marchena";
+import Osuna from "./pages/localidades/Osuna";
 import Tomares from "./pages/localidades/Tomares";
 import AlcalaGuadaira from "./pages/localidades/AlcalaGuadaira";
-
+import CiudadPage from "./pages/CiudadPage";
 
 const queryClient = new QueryClient();
 
@@ -78,20 +78,8 @@ const App = () => (
               <Route path="/politica-seguridad" element={<PoliticaSeguridad />} />
               <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />
               <Route path="/empresa" element={<Empresa />} />
-              <Route path="/sevilla" element={<Sevilla />} />
-              <Route path="/dos-hermanas" element={<DosHermanas />} />
-              <Route path="/la-rinconada" element={<LaRinconada />} />
-              <Route path="/arahal" element={<Arahal />} />
-              <Route path="/bormujos" element={<Bormujos />} />
-              <Route path="/carmona" element={<Carmona />} />
-              <Route path="/coria-del-rio" element={<CoriaDelRio />} />
-              <Route path="/ecija" element={<Ecija />} />
-              <Route path="/lebrija" element={<Lebrija />} />
-              <Route path="/marchena" element={<Marchena />} />
-              <Route path="/osuna" element={<Osuna />} />
-              <Route path="/tomares" element={<Tomares />} />
-              <Route path="/alcala-guadaira" element={<AlcalaGuadaira />} />
-              <Route path="/utrera" element={<Utrera />} />
+              <Route path="/:ciudad" element={<CiudadPage />} />
+           
               <Route path="*" element={<NotFound />} />
             </Routes>
           </MainContent>

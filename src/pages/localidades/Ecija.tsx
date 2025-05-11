@@ -16,7 +16,7 @@ export default function Ecija() {
         </section>
 
         <section className="grid md:grid-cols-3 gap-4">
-          <img src="/imagenes/compromiso2.jpg" alt="Compromiso profesional en Écija" className="rounded-xl shadow" />
+          <img src="/imagenes/residential.jpg" alt="Compromiso profesional en Écija" className="rounded-xl shadow" />
           <img src="/imagenes/mantenimiento.jpg" alt="Servicios de mantenimiento en Écija" className="rounded-xl shadow" />
           <img src="/imagenes/sobre_nosotros.jpg" alt="Empresa de confianza en Écija" className="rounded-xl shadow" />
         </section>
