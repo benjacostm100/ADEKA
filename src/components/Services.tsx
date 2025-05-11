@@ -15,7 +15,7 @@ const AboutUs = () => {
     >
       <h2 className="text-2xl md:text-3xl font-bold text-adeka-black mb-8">Sobre ADEKA</h2>
           <p className="text-base md:text-lg text-gray-700 mb-6">
-      Somos una empresa ubicada en <strong>Coria del Río (Sevilla)</strong>, especializada en <strong>servicios auxiliares de control, mantenimiento integral de comunidades y jardinería profesional</strong>. Nuestro equipo gestiona accesos, organiza eventos, mantiene instalaciones y cuida espacios verdes con profesionalismo y eficacia. <br />
+      Somos una empresa ubicada en <strong>Coria del Río (Sevilla)</strong>, especializada en <strong>servicios auxiliares de control, mantenimiento integral de comunidades, jardinería profesional y portería para eventos</strong>. Nuestro equipo gestiona accesos, organiza eventos, mantiene instalaciones y cuida espacios verdes con profesionalismo y eficacia. <br />
       En <strong>ADEKA</strong>, ofrecemos <strong>soluciones adaptadas a cada cliente</strong>, priorizando la <strong>calidad, la confianza y la atención personalizada</strong> en cada intervención. <br />
       Además, nos comprometemos a mantener una relación de largo plazo con nuestros clientes, basándonos en la <strong>transparencia</strong> y el <strong>respeto mutuo</strong> en todas nuestras operaciones.
     </p>

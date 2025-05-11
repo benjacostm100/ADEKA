@@ -9,10 +9,13 @@ export default function CiudadPage() {
 
   if (!data) return (
     <div className="flex items-center justify-center min-h-screen bg-adeka-silver">
-      <div className="text-center p-8 bg-white rounded-lg shadow-lg">
+      <div className="text-center p-8 bg-white rounded-lg shadow-xl">
         <h1 className="text-2xl font-bold text-adeka-black mb-4">Localidad no encontrada</h1>
-        <p className="text-adeka-black/80">La página solicitada no existe</p>
-        <Link to="/" className="text-adeka-gold hover:underline mt-4 inline-block">
+        <p className="text-adeka-black/80 mb-6">La página solicitada no existe</p>
+        <Link 
+          to="/" 
+          className="inline-block px-6 py-2 bg-adeka-gold text-adeka-black font-bold rounded-lg hover:bg-adeka-gold/90 transition-colors"
+        >
           Volver al inicio
         </Link>
       </div>
@@ -23,24 +26,24 @@ export default function CiudadPage() {
     <div className="font-montserrat bg-white">
       {/* Hero Section */}
       <section 
-        className="relative h-[70vh] flex items-center justify-center bg-cover bg-center px-4"
-        style={{ backgroundImage: `linear-gradient(rgba(26, 26, 26, 0.7), url(/imagenes/inicio2.jpg)` }}
+        className="relative h-[80vh] flex items-center justify-center bg-cover bg-center px-4 bg-fixed"
+        style={{ backgroundImage: `linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.6)), url(${data.heroImage})` }}
       >
         <div className="text-center max-w-4xl px-4">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-adeka-gold mb-4 animate-fade-in">
-            ADEKA Servicios en {ciudad?.toUpperCase()}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-adeka-gold mb-6 animate-fade-in">
+            ADEKA en {ciudad?.toUpperCase()}
           </h1>
-          <p className="text-xl text-adeka-silver mb-8">
-            Espacios seguros, organizados y bien cuidados en {ciudad}
+          <p className="text-xl md:text-2xl text-adeka-silver mb-8 max-w-3xl mx-auto">
+            Soluciones profesionales para comunidades y empresas en {ciudad}
           </p>
-          <div className="flex gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/empresa">
-              <button className="bg-adeka-gold hover:bg-adeka-gold/90 text-adeka-black font-bold py-3 px-6 rounded-lg text-lg transition-all duration-300 hover:scale-105">
+              <button className="bg-adeka-gold hover:bg-adeka-gold/90 text-adeka-black font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 hover:scale-105 shadow-lg">
                 Nuestra Empresa
               </button>
             </Link>
             <Link to="/">
-              <button className="bg-transparent border-2 border-adeka-silver hover:bg-adeka-silver/20 text-adeka-silver font-bold py-3 px-6 rounded-lg text-lg transition-all duration-300 hover:scale-105">
+              <button className="bg-transparent border-2 border-adeka-silver hover:bg-adeka-silver/20 text-adeka-silver font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 hover:scale-105">
                 Nuestros Servicios
               </button>
             </Link>
@@ -49,28 +52,32 @@ export default function CiudadPage() {
       </section>
 
       {/* Sobre ADEKA */}
-      <section className="py-16 px-4 bg-adeka-black text-adeka-silver">
+      <section className="py-20 px-4 bg-adeka-black text-adeka-silver">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div>
+          <div className="order-2 md:order-1">
             <h2 className="text-3xl md:text-4xl font-bold text-adeka-gold mb-6">
-              Nuestra Empresa en {ciudad}
+              ADEKA en {ciudad}
             </h2>
             <div className="w-24 h-1 bg-adeka-gold mb-8"></div>
             <p className="text-lg mb-6 leading-relaxed">
-              ADEKA es una empresa especializada en auxiliares de control, mantenimiento de comunidades, 
-              jardinería profesional y portería para eventos enfocada en crear espacios seguros, 
-              organizados y bien cuidados en {ciudad}.
+              Somos especialistas en servicios auxiliares, mantenimiento integral y jardinería profesional, 
+              enfocados en crear espacios seguros, organizados y bien cuidados en {ciudad}.
             </p>
             <p className="text-lg mb-6 leading-relaxed">
-              Nuestro equipo en {ciudad} está capacitado para gestionar accesos, supervisar eventos, 
-              mantener instalaciones en óptimas condiciones y cuidar espacios verdes, siempre con 
-              profesionalismo y atención a los detalles.
+              Nuestro equipo local está capacitado para gestionar accesos, supervisar eventos, mantener 
+              instalaciones y cuidar espacios verdes con el máximo profesionalismo.
             </p>
+            <Link 
+              to="/empresa" 
+              className="inline-block mt-4 px-6 py-3 bg-adeka-gold text-adeka-black font-bold rounded-lg hover:bg-adeka-gold/90 transition-colors"
+            >
+              Conoce nuestra empresa
+            </Link>
           </div>
-          <div className="rounded-lg overflow-hidden shadow-2xl">
+          <div className="order-1 md:order-2 rounded-xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-500">
             <img 
               src="/imagenes/empresa.jpg" 
-              alt={`Equipo ADEKA en ${ciudad}`}
+              alt={`Equipo ADEKA trabajando en ${ciudad}`}
               className="w-full h-auto object-cover"
             />
           </div>
@@ -78,131 +85,112 @@ export default function CiudadPage() {
       </section>
 
       {/* Servicios Section */}
-      <section className="py-16 px-4 bg-adeka-silver/10">
+      <section className="py-20 px-4 bg-gradient-to-b from-adeka-silver/10 to-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-adeka-black mb-4">
               Nuestros Servicios en {ciudad}
             </h2>
-            <div className="w-24 h-1 bg-adeka-gold mx-auto mb-4"></div>
+            <div className="w-24 h-1 bg-adeka-gold mx-auto mb-6"></div>
             <p className="text-xl text-adeka-black/80 max-w-3xl mx-auto">
-              Soluciones adaptadas a las necesidades específicas de {ciudad}
+              Soluciones profesionales adaptadas a las necesidades de {ciudad}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <LocalidadCard 
-                    type="auxiliares"
-                    image="/imagenes/control.jpg"
-                    ciudad="Sevilla"
-                />
-                <LocalidadCard 
-                    type="mantenimiento"
-                    image="/imagenes/mantenimiento.jpg"
-                    ciudad="Sevilla"
-                />
-                <LocalidadCard 
-                    type="jardineria"
-                    image="/imagenes/jardineria4.jpg"
-                    ciudad="Sevilla"
-                />
-                </div>
+            <LocalidadCard 
+              type="auxiliares"
+              image="/imagenes/control.jpg"
+              ciudad={ciudad}
+            />
+            <LocalidadCard 
+              type="mantenimiento"
+              image="/imagenes/mantenimiento.jpg"
+              ciudad={ciudad}
+            />
+            <LocalidadCard 
+              type="jardineria"
+              image="/imagenes/jardineria4.jpg"
+              ciudad={ciudad}
+            />
+          </div>
         </div>
       </section>
 
-      {/* Valores y Diferenciales */}
-      <section className="py-16 px-4 bg-white">
+      {/* Beneficios */}
+      <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-adeka-black mb-4">
-              Nuestros Valores en {ciudad}
+              ¿Por qué elegir ADEKA en {ciudad}?
             </h2>
             <div className="w-24 h-1 bg-adeka-gold mx-auto"></div>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-adeka-silver/10 p-8 rounded-lg border-l-4 border-adeka-gold">
-              <h3 className="text-xl font-bold text-adeka-black mb-4 flex items-center">
-                <span className="text-adeka-gold mr-2 text-2xl">✓</span> Profesionalismo
-              </h3>
+            <div className="bg-adeka-silver/10 p-8 rounded-xl border-t-4 border-adeka-gold shadow-lg hover:shadow-xl transition-shadow">
+              <div className="text-4xl text-adeka-gold mb-4">🛡️</div>
+              <h3 className="text-xl font-bold text-adeka-black mb-4">Profesionalismo</h3>
               <p className="text-adeka-black/90">
-                Personal cualificado con formación continua y protocolos estandarizados para cada servicio.
+                Personal cualificado con formación continua y protocolos estandarizados para garantizar la mejor calidad de servicio.
               </p>
             </div>
             
-            <div className="bg-adeka-silver/10 p-8 rounded-lg border-l-4 border-adeka-gold">
-              <h3 className="text-xl font-bold text-adeka-black mb-4 flex items-center">
-                <span className="text-adeka-gold mr-2 text-2xl">✓</span> Adaptabilidad
-              </h3>
+            <div className="bg-adeka-silver/10 p-8 rounded-xl border-t-4 border-adeka-gold shadow-lg hover:shadow-xl transition-shadow">
+              <div className="text-4xl text-adeka-gold mb-4">🔄</div>
+              <h3 className="text-xl font-bold text-adeka-black mb-4">Adaptabilidad</h3>
               <p className="text-adeka-black/90">
-                Soluciones personalizadas para cada cliente en {ciudad}, desde comunidades hasta grandes eventos.
+                Soluciones personalizadas para cada cliente en {ciudad}, desde pequeñas comunidades hasta grandes eventos corporativos.
               </p>
             </div>
             
-            <div className="bg-adeka-silver/10 p-8 rounded-lg border-l-4 border-adeka-gold">
-              <h3 className="text-xl font-bold text-adeka-black mb-4 flex items-center">
-                <span className="text-adeka-gold mr-2 text-2xl">✓</span> Responsabilidad
-              </h3>
+            <div className="bg-adeka-silver/10 p-8 rounded-xl border-t-4 border-adeka-gold shadow-lg hover:shadow-xl transition-shadow">
+              <div className="text-4xl text-adeka-gold mb-4">🏆</div>
+              <h3 className="text-xl font-bold text-adeka-black mb-4">Excelencia</h3>
               <p className="text-adeka-black/90">
-                Compromiso total con cada proyecto, cumpliendo plazos y estándares de calidad.
+                Compromiso total con cada proyecto, cumpliendo los más altos estándares de calidad y satisfacción del cliente.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Galería de Trabajos */}
-      <section className="py-16 px-4 bg-adeka-black">
+      {/* Galería */}
+      <section className="py-20 px-4 bg-adeka-black">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-adeka-gold mb-12 text-center">
-            Nuestro Trabajo en {ciudad}
+            Nuestros Trabajos en {ciudad}
           </h2>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="overflow-hidden rounded-lg h-48">
-              <img 
-                src="/imagenes/jardineria.jpg" 
-                alt={`Jardinería en ${ciudad}`}
-                className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-              />
-            </div>
-            <div className="overflow-hidden rounded-lg h-48">
-              <img 
-                src="/imagenes/control.jpg" 
-                alt={`Control de accesos en ${ciudad}`}
-                className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-              />
-            </div>
-            <div className="overflow-hidden rounded-lg h-48">
-              <img 
-                src="/imagenes/mantenimiento.jpg" 
-                alt={`Mantenimiento en ${ciudad}`}
-                className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-              />
-            </div>
-            <div className="overflow-hidden rounded-lg h-48">
-              <img 
-                src="/imagenes/security4.jpg" 
-                alt={`Seguridad en ${ciudad}`}
-                className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-              />
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {['jardineria.jpg', 'control.jpg', 'mantenimiento.jpg', 'security4.jpg'].map((img, index) => (
+              <div key={index} className="overflow-hidden rounded-xl h-64 relative group">
+                <img 
+                  src={`/imagenes/${img}`}
+                  alt={`Proyecto ADEKA en ${ciudad}`}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-adeka-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                  <span className="text-adeka-silver font-medium">Proyecto en {ciudad}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* CTA Final */}
-      <section className="py-20 px-4 bg-gradient-to-r from-adeka-black to-adeka-darkBlue">
+      <section className="py-24 px-4 bg-gradient-to-r from-adeka-darkBlue to-adeka-black">
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-3xl md:text-4xl font-bold text-adeka-gold mb-6">
-            ¿Listo para transformar los espacios en {ciudad}?
+            ¿Listo para mejorar los espacios en {ciudad}?
           </h3>
           <p className="text-xl text-adeka-silver mb-8 max-w-3xl mx-auto">
             Contáctanos hoy mismo y descubre cómo podemos ayudarte con nuestros servicios profesionales.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/solicitar-presupuesto">
-              <button className="bg-adeka-gold hover:bg-adeka-gold/90 text-adeka-black font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 hover:scale-105">
+              <button className="bg-adeka-gold hover:bg-adeka-gold/90 text-adeka-black font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 hover:scale-105 shadow-lg">
                 Solicitar Presupuesto
               </button>
             </Link>

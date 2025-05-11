@@ -104,7 +104,7 @@ const LocalidadCard: React.FC<LocalidadCardProps> = ({ type, image, ciudad }) =>
             }`}
             className="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-bold tracking-wider text-center uppercase transition-all duration-200 rounded-lg bg-adeka-gold text-adeka-black hover:bg-adeka-gold/90 hover:shadow-md"
           >
-            Ver {title.toLowerCase()} en {ciudad}
+            Ver {title.toLowerCase()} 
           </Link>
         </div>
       </div>
