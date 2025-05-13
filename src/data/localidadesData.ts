@@ -11,7 +11,7 @@ const generateLocalKeywords = (baseKeywords: string[], ciudad: string) => {
 };
 
 const generateDescription = (ciudad: string) => {
-  return `ADEKA ofrece servicios profesionales de auxiliares para eventos, mantenimiento de comunidades y jardinería en ${ciudad}. Personal cualificado y soluciones adaptadas.`;
+  return `En ${ciudad}, ADEKA brinda servicios profesionales en auxiliares para eventos, mantenimiento de comunidades y jardinería. Contamos con personal cualificado y soluciones adaptadas a cada necesidad.`;
 };
 
 export const localidadesData = {
