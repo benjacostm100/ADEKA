@@ -68,7 +68,7 @@ export interface CityDescription {
         "Jardinería adaptada a entornos patrimoniales"
       ]
     },
-    castillejaDeLaCuesta: {
+    "castilleja-de-la-cuesta": {
       title: "Castilleja de la Cuesta: Vida Urbana y Cercanía con Sevilla",
       overview: "Castilleja ofrece un entorno residencial muy activo, con buena conexión a Sevilla. Perfecto para servicios auxiliares adaptados a distintas necesidades.",
       highlights: [
@@ -83,7 +83,7 @@ export interface CityDescription {
         "Control de accesos para urbanizaciones"
       ]
     },
-    coriaDelRio: {
+    "coria-del-rio": {
       title: "Coria del Río: Ribera Activa y Expansión Residencial",
       overview: "Coria del Río, junto al Guadalquivir, combina tradición y crecimiento. Es un lugar ideal para destacar con servicios auxiliares y jardinería de calidad.",
       highlights: [
@@ -98,7 +98,7 @@ export interface CityDescription {
         "Servicios auxiliares para eventos locales"
       ]
     },
-    dosHermanas: {
+    "dos-hermanas": {
       title: "Dos Hermanas: Dinamismo Urbano y Potencial Empresarial",
       overview: "Dos Hermanas es una de las ciudades más activas del área metropolitana, ideal para servicios integrales bien organizados.",
       highlights: [
@@ -128,7 +128,7 @@ export interface CityDescription {
         "Servicios adaptados al turismo cultural"
       ]
     },
-    elVisoDelAlcor: {
+    "el-viso-del-alcor": {
       title: "El Viso del Alcor: Comunidad Activa y Entorno Tranquilo",
       overview: "El Viso del Alcor combina la tranquilidad de un pueblo con el ritmo de una ciudad que crece. Ideal para servicios adaptados a su gente.",
       highlights: [
@@ -158,7 +158,7 @@ export interface CityDescription {
         "Control de accesos para establecimientos"
       ]
     },
-    laRinconada: {
+    "la-rinconada": {
       title: "La Rinconada: Conexión y Desarrollo Continuo",
       overview: "La Rinconada está en plena expansión urbana, con nuevas zonas que requieren servicios estables y eficientes.",
       highlights: [
@@ -188,7 +188,7 @@ export interface CityDescription {
         "Auxiliares para eventos agrícolas"
       ]
     },
-    mairenaDelAlcor: {
+    "mairena-del-alcor": {
       title: "Mairena del Alcor: Crecimiento Familiar y Servicios en Expansión",
       overview: "Mairena del Alcor combina historia con un perfil residencial joven. Ideal para empresas que apuestan por servicios versátiles.",
       highlights: [
@@ -203,7 +203,7 @@ export interface CityDescription {
         "Servicios auxiliares para eventos familiares"
       ]
     },
-    mairenaDelAljarafe: {
+    "mairena-del-aljarafe": {
       title: "Mairena del Aljarafe: Modernidad y Alta Demanda",
       overview: "Mairena del Aljarafe es uno de los núcleos más modernos del área metropolitana. El entorno ideal para servicios eficientes y tecnológicos.",
       highlights: [
@@ -233,7 +233,7 @@ export interface CityDescription {
         "Jardinería adaptada al entorno histórico"
       ]
     },
-    moronDeLaFrontera: {
+    "moron-de-la-frontera": {
       title: "Morón de la Frontera: Entorno Industrial y Tradición",
       overview: "Morón combina su historia con un tejido industrial creciente. Perfecto para servicios auxiliares bien coordinados.",
       highlights: [
@@ -263,7 +263,7 @@ export interface CityDescription {
         "Auxiliares para eventos académicos"
       ]
     },
-    sanJuanDeAznalfarache: {
+    "san-juan-de-aznalfarache": {
       title: "San Juan de Aznalfarache: Conectividad y Densidad",
       overview: "San Juan de Aznalfarache está estratégicamente ubicada junto a Sevilla, con alta densidad y movimiento constante.",
       highlights: [
