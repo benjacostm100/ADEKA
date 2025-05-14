@@ -4,12 +4,20 @@ import LocalidadCard from '@/components/LocalidadCard';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { keywordsData } from "@/data/keywordsData";
+import CityComponent from '@/components/CityComponent';
+import { cityDescriptions } from '@/data/cityDescription';
+
 
 
 export default function CiudadPage() {
   const { ciudad } = useParams();
   const data = localidadesData[ciudad as keyof typeof localidadesData];
 
+  console.log('Ciudad desde params:', ciudad);
+console.log('Ciudades disponibles:', Object.keys(cityDescriptions));
+
+
+  
   if (!data)
     return (
       <div className="flex items-center justify-center min-h-screen bg-adeka-silver">
@@ -33,8 +41,10 @@ export default function CiudadPage() {
         <meta name="description" content={data.description} />
         <meta name="keywords" content={data.keywords} />
       </Helmet>
-
-      {/* Hero Section */}
+     
+     
+     
+     {/* Hero Section */}
       <section
         className="relative h-[80vh] flex items-center justify-center bg-cover bg-center bg-fixed px-4"
         style={{
@@ -62,6 +72,8 @@ export default function CiudadPage() {
           </div>
         </div>
       </section>
+
+      <CityComponent ciudad={ciudad || 'sevilla'} />
 
       {/* Sobre ADEKA */}
       <section className="py-20 px-4 bg-adeka-black text-adeka-silver">
