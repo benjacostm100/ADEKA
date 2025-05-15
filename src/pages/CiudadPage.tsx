@@ -232,25 +232,30 @@ console.log('Ciudades disponibles:', Object.keys(cityDescriptions));
 
 
      {/* Compromiso */}
-<section className="py-20 px-4 bg-white">
+     <section className="py-20 px-4 bg-white">
   <div className="max-w-6xl mx-auto text-center">
     <h2 className="text-3xl md:text-4xl font-bold text-adeka-black mb-4">
       Comprometidos con {ciudad}
     </h2>
     <div className="w-24 h-1 bg-adeka-gold mx-auto mb-12"></div>
-    <p className="text-xl leading-relaxed mb-6">
-      En ADEKA, cada cliente cuenta. Apostamos por relaciones basadas en la confianza, la excelencia y un enfoque personalizado que se adapta a las necesidades reales de cada espacio.
+
+    <p className="text-xl leading-relaxed mb-8">
+      En <strong className="text-adeka-black font-semibold">ADEKA</strong>, cada cliente cuenta. Apostamos por relaciones basadas en la confianza, la excelencia y un enfoque personalizado que se adapta a las necesidades reales de cada espacio.
     </p>
+
+    <h3 className="text-2xl font-semibold text-adeka-gold mb-4">Nuestros valores y servicios destacados:</h3>
     <ul className="text-left max-w-3xl mx-auto list-disc list-inside text-lg mb-10 space-y-2 text-adeka-black">
       {keywordsData.generales.slice(0, 5).map((kw, i) => (
         <li key={i}>{kw}</li>
       ))}
     </ul>
+
     <p className="text-xl leading-relaxed">
-      Ya sea en {ciudad} o en cualquier punto de la provincia, estamos preparados para ofrecer una gestión eficiente, profesional y cercana. 
+      Ya sea en <strong>{ciudad}</strong> o en cualquier punto de la provincia, estamos preparados para ofrecer una gestión eficiente, profesional y cercana.
     </p>
   </div>
 </section>
+
 
 
 <section className="py-20 px-4 bg-adeka-black text-adeka-silver">
@@ -267,7 +272,7 @@ console.log('Ciudades disponibles:', Object.keys(cityDescriptions));
         <h3 className="text-xl font-bold text-adeka-black mb-4 flex items-center">
           <span className="text-adeka-gold mr-2">🛡️</span> Profesionalismo
         </h3>
-        <h4 className="text-lg font-semibold text-adeka-black mb-2">Nuestro estándar</h4>
+        <h4 className="text-lg font-semibold text-adeka-gold/80 mb-2">Nuestro estándar</h4>
         <p className="text-adeka-black/90">
           Equipo capacitado, procesos claros y compromiso con la calidad.
         </p>
@@ -277,7 +282,7 @@ console.log('Ciudades disponibles:', Object.keys(cityDescriptions));
         <h3 className="text-xl font-bold text-adeka-black mb-4 flex items-center">
           <span className="text-adeka-gold mr-2">🔄</span> Flexibilidad
         </h3>
-        <h4 className="text-lg font-semibold text-adeka-black mb-2">Adaptación local</h4>
+        <h4 className="text-lg font-semibold text-adeka-gold/80 mb-2">Adaptación local</h4>
         <p className="text-adeka-black/90">
           Nos ajustamos a las particularidades de cada cliente en {ciudad}.
         </p>
@@ -287,7 +292,7 @@ console.log('Ciudades disponibles:', Object.keys(cityDescriptions));
         <h3 className="text-xl font-bold text-adeka-black mb-4 flex items-center">
           <span className="text-adeka-gold mr-2">🏆</span> Resultados
         </h3>
-        <h4 className="text-lg font-semibold text-adeka-black mb-2">Garantía de calidad</h4>
+        <h4 className="text-lg font-semibold text-adeka-gold/80 mb-2">Garantía de calidad</h4>
         <p className="text-adeka-black/90">
           Cumplimos lo que prometemos en cada proyecto.
         </p>
