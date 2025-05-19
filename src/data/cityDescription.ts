@@ -16,11 +16,11 @@ export interface CityDescription {
           "Centro logístico sur: Polígonos industriales y zonas empresariales con alta demanda de servicios",
           "Calidad de vida: Urbanizaciones exclusivas que valoran profesionalismo y discreción"
         ],
-        conclusion: "Servir en Sevilla exige equilibrio entre conocimiento local y estándares internacionales, donde ADEKA destaca por su versatilidad y capacidad de ejecución.",
+        conclusion: "Servir en Sevilla exige equilibrio entre conocimiento local y estándares internacionales, donde nuestra empresa de soluciones personalizadas e integrales destaca por su versatilidad y capacidad de ejecución.",
         servicesFocus: [
           "Conserjería para hoteles y palacios convertidos en alojamientos",
           "Mantenimiento de jardines históricos (Murillo, María Luisa)",
-          "Limpieza especializada en edificios protegidos",
+          "Servicios de mantenimiento especializados en edificios protegidos",
         ]
       },
     arahal: {

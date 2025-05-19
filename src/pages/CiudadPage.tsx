@@ -33,7 +33,6 @@ console.log('Ciudades disponibles:', Object.keys(cityDescriptions));
          <Helmet>
         <title>{`ADEKA en ${ciudad} | Servicios Profesionales`}</title>
         <meta name="description" content={metaDescription} />
-        <meta name="keywords" content={`ADEKA, ${ciudad}, mantenimiento, portería, jardinería, comunidades, servicios auxiliares`} />
         </Helmet>
 
         <div className="text-center p-8 bg-white rounded-lg shadow-xl">
@@ -52,7 +51,7 @@ console.log('Ciudades disponibles:', Object.keys(cityDescriptions));
   return (
     <div className="font-montserrat bg-white">
        <Helmet>
-        <title>{`ADEKA en ${ciudad}`}</title>
+        <title>{`Empresa multiservicios en  ${ciudad}`}</title>
         <meta 
           name="description" 
           content={metaDescription} // Dinámica según la ciudad
@@ -74,7 +73,7 @@ console.log('Ciudades disponibles:', Object.keys(cityDescriptions));
       >
         <div className="text-center max-w-4xl px-4">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-adeka-gold mb-6 animate-fade-in">
-            ADEKA en {ciudad?.toUpperCase()}
+            Empresa multiservicios en  {ciudad?.toUpperCase()}
           </h1>
           <p className="text-xl md:text-2xl text-adeka-silver mb-8 max-w-3xl mx-auto">
             {data.description}
@@ -99,15 +98,16 @@ console.log('Ciudades disponibles:', Object.keys(cityDescriptions));
       <section className="py-20 px-4 bg-adeka-black text-adeka-silver">
   <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
     <div className="order-2 md:order-1">
-      <h2 className="text-3xl md:text-4xl font-bold text-adeka-gold mb-6">
-        ADEKA: su socio de confianza en {ciudad}
-      </h2>
-      <div className="w-24 h-1 bg-adeka-gold mb-8"></div>
-      
-      <h3 className="text-2xl font-semibold text-adeka-gold mb-4">Nuestra presencia en {ciudad}</h3>
-      <p className="text-lg mb-6 leading-relaxed">
-        En ADEKA trabajamos para ofrecer soluciones adaptadas a las necesidades específicas de {ciudad}.
-      </p>
+     <h2 className="text-3xl md:text-4xl font-bold text-adeka-gold mb-6">
+  Servicios auxiliares, portería y mantenimiento en {ciudad}
+</h2>
+<div className="w-24 h-1 bg-adeka-gold mb-8"></div>
+
+<h3 className="text-2xl font-semibold text-adeka-gold mb-4">Soluciones profesionales en {ciudad}</h3>
+<p className="text-lg mb-6 leading-relaxed">
+  Ofrecemos servicios especializados en portería, auxiliares profesionales, jardinería y mantenimiento integral, con atención personalizada para comunidades, eventos, oficinas y espacios comerciales en {ciudad}.
+</p>
+
       
       <h4 className="text-xl font-medium text-adeka-gold mb-3">Áreas de especialización</h4>
       <ul className="list-disc pl-5 space-y-2 mb-6">
@@ -235,13 +235,14 @@ console.log('Ciudades disponibles:', Object.keys(cityDescriptions));
      <section className="py-20 px-4 bg-white">
   <div className="max-w-6xl mx-auto text-center">
     <h2 className="text-3xl md:text-4xl font-bold text-adeka-black mb-4">
-      Comprometidos con {ciudad}
-    </h2>
-    <div className="w-24 h-1 bg-adeka-gold mx-auto mb-12"></div>
+  Comprometidos con {ciudad}
+</h2>
+<div className="w-24 h-1 bg-adeka-gold mx-auto mb-12"></div>
 
-    <p className="text-xl leading-relaxed mb-8">
-      En <strong className="text-adeka-black font-semibold">ADEKA</strong>, cada cliente cuenta. Apostamos por relaciones basadas en la confianza, la excelencia y un enfoque personalizado que se adapta a las necesidades reales de cada espacio.
-    </p>
+<p className="text-xl leading-relaxed mb-8">
+  Cada cliente cuenta. Apostamos por un servicio profesional con auxiliares cualificados, porteros atentos y personal técnico especializado en mantenimiento y jardinería, garantizando confianza, excelencia y soluciones personalizadas para cada comunidad o empresa en {ciudad}.
+</p>
+
 
     <h3 className="text-2xl font-semibold text-adeka-gold mb-4">Nuestros valores y servicios destacados:</h3>
     <ul className="text-left max-w-3xl mx-auto list-disc list-inside text-lg mb-10 space-y-2 text-adeka-black">
@@ -380,8 +381,9 @@ console.log('Ciudades disponibles:', Object.keys(cityDescriptions));
     </h2>
     <div className="divider-gold mx-auto mb-12"></div>
     <p className="leading-relaxed mb-8 text-lg">
-      Descubre la amplia gama de soluciones profesionales que ADEKA ofrece en {ciudad}. Nos especializamos en servicios de mantenimiento, portería, jardinería y auxiliares, adaptándonos a las necesidades específicas de tu empresa, comunidad o evento.
-    </p>
+  Descubre la variedad de servicios profesionales disponibles en {ciudad}. Brindamos atención experta en conservación de espacios, control de accesos, cuidado de áreas verdes y personal de apoyo, diseñados para ajustarse a las necesidades de tu empresa, comunidad o evento.
+</p>
+
 
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
       <div>
@@ -438,10 +440,10 @@ console.log('Ciudades disponibles:', Object.keys(cityDescriptions));
           <h3 className="text-3xl md:text-4xl font-bold text-adeka-gold mb-6">
             ¿Listo para transformar sus espacios en {ciudad}?
           </h3>
-          <p className="text-xl text-adeka-silver mb-8 max-w-3xl mx-auto">
-            Póngase en contacto con nosotros hoy mismo para obtener un presupuesto personalizado y descubrir cómo ADEKA
-            puede ayudarle.
-          </p>
+         <p className="text-xl text-adeka-silver mb-8 max-w-3xl mx-auto">
+  Contacte con nuestro equipo hoy mismo para recibir un presupuesto personalizado y descubrir cómo podemos ayudarle con sus necesidades de servicios profesionales.
+</p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/solicitar-presupuesto">
               <button className="bg-adeka-gold hover:bg-adeka-gold/90 text-adeka-black font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 hover:scale-105 shadow-lg">

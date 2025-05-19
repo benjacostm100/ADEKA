@@ -4,19 +4,20 @@ import { keywordsData } from './keywordsData';
 const generateLocalKeywords = (baseKeywords: string[], ciudad: string) => {
   return [
     ...baseKeywords.map(k => `${k} en ${ciudad}`),
-    `ADEKA ${ciudad}`,
     `empresa multiservicios en ${ciudad}`,
+    `empresa de mantenimiento profesional en ${ciudad}`,
+    `empresa de servicios auxiliares en ${ciudad}`,
     `servicios profesionales en ${ciudad}`
   ];
 };
 
 const generateDescription = (ciudad: string) => {
-  return `En ${ciudad}, ADEKA brinda servicios profesionales en auxiliares para eventos, mantenimiento de comunidades y jardinería. Contamos con personal cualificado y soluciones adaptadas a cada necesidad.`;
+  return `En ${ciudad}, nuestra empresa multiservicios ofrece soluciones profesionales en auxiliares para eventos, mantenimiento de comunidades y jardinería. Contamos con personal cualificado y servicios adaptados a cada necesidad.`;
 };
 
 export const localidadesData = {
   arahal: {
-    title: "ADEKA Servicios Auxiliares y Mantenimiento en Arahal | Empresa Multiservicios",
+    title: "Empresa Multiservicios en Arahal | Auxiliares, Mantenimiento y Jardinería",
     description: generateDescription("Arahal"),
     heroImage: "/imagenes/inicio2.jpg",
     services: [
@@ -32,7 +33,7 @@ export const localidadesData = {
     ].join(", ")
   },
   bormujos: {
-    title: "ADEKA Servicios Profesionales en Bormujos | Auxiliares y Mantenimiento",
+    title: "Servicios Profesionales en Bormujos | Auxiliares y Mantenimiento",
     description: generateDescription("Bormujos"),
     heroImage: "/imagenes/security4.jpg",
     services: [
@@ -48,7 +49,7 @@ export const localidadesData = {
     ].join(", ")
   },
   carmona: {
-    title: "ADEKA Servicios Integrales en Carmona | Auxiliares, Mantenimiento y Jardinería",
+    title: "Servicios Integrales en Carmona | Auxiliares, Mantenimiento y Jardinería",
     description: generateDescription("Carmona"),
     heroImage: "/imagenes/residential.jpg",
     services: [
@@ -64,7 +65,7 @@ export const localidadesData = {
     ].join(", ")
   },
   'castilleja-de-la-cuesta': {
-    title: "ADEKA Servicios en Castilleja de la Cuesta | Auxiliares y Mantenimiento 24h",
+    title: "Servicios en Castilleja de la Cuesta | Auxiliares y Mantenimiento 24h",
     description: generateDescription("Castilleja de la Cuesta"),
     heroImage: "/imagenes/inicio2.jpg",
     services: [
@@ -80,7 +81,7 @@ export const localidadesData = {
     ].join(", ")
   },
   'coria-del-rio': {
-    title: "ADEKA Servicios Profesionales en Coria del Río | Auxiliares y Mantenimiento",
+    title: "Servicios Profesionales en Coria del Río | Auxiliares y Mantenimiento",
     description: generateDescription("Coria del Río"),
     heroImage: "/imagenes/residential.jpg",
     services: [
@@ -96,7 +97,7 @@ export const localidadesData = {
     ].join(", ")
   },
   ecija: {
-    title: "ADEKA Servicios Integrales en Écija | Auxiliares, Portería y Mantenimiento",
+    title: "Servicios Integrales en Écija | Auxiliares, Portería y Mantenimiento",
     description: generateDescription("Écija"),
     heroImage: "/imagenes/inicio2.jpg",
     services: [
@@ -112,7 +113,7 @@ export const localidadesData = {
     ].join(", ")
   },
   lebrija: {
-    title: "ADEKA Servicios Profesionales en Lebrija | Auxiliares y Mantenimiento",
+    title: "Servicios Profesionales en Lebrija | Auxiliares y Mantenimiento",
     description: generateDescription("Lebrija"),
     heroImage: "/imagenes/residential.jpg",
     services: [
@@ -128,7 +129,7 @@ export const localidadesData = {
     ].join(", ")
   },
   marchena: {
-    title: "ADEKA Servicios Integrales en Marchena | Auxiliares, Portería y Mantenimiento",
+    title: "Servicios Integrales en Marchena | Auxiliares, Portería y Mantenimiento",
     description: generateDescription("Marchena"),
     heroImage: "/imagenes/inicio2.jpg",
     services: [
@@ -144,7 +145,7 @@ export const localidadesData = {
     ].join(", ")
   },
   osuna: {
-    title: "ADEKA Servicios Profesionales en Osuna | Auxiliares y Mantenimiento",
+    title: "Servicios Profesionales en Osuna | Auxiliares y Mantenimiento",
     description: generateDescription("Osuna"),
     heroImage: "/imagenes/residential.jpg",
     services: [
@@ -160,7 +161,7 @@ export const localidadesData = {
     ].join(", ")
   },
   tomares: {
-    title: "ADEKA Servicios Integrales en Tomares | Auxiliares, Portería y Mantenimiento",
+    title: "Servicios Integrales en Tomares | Auxiliares, Portería y Mantenimiento",
     description: generateDescription("Tomares"),
     heroImage: "/imagenes/inicio2.jpg",
     services: [
@@ -176,13 +177,13 @@ export const localidadesData = {
     ].join(", ")
   },
   'san-juan-de-aznalfarache': {
-    title: "ADEKA Servicios en San Juan de Aznalfarache | Auxiliares y Mantenimiento 24h",
+    title: "Servicios en San Juan de Aznalfarache | Auxiliares y Mantenimiento 24h",
     description: generateDescription("San Juan de Aznalfarache"),
     heroImage: "/imagenes/residential.jpg",
     services: [
       { title: "Portería Comercial", image: "/imagenes/control.jpg", type: "porteria" },
       { title: "Mantenimiento Locales", image: "/imagenes/mantenimiento.jpg", type: "mantenimiento" },
-      { title: "Podas y Talas", image: "/imagenes/jardineria4.jpg", type: "jardineria" }
+      { title: "Jardinería Residencial", image: "/imagenes/jardineria4.jpg", type: "jardineria" }
     ],
     keywords: [
       ...generateLocalKeywords(keywordsData.porteria, "San Juan de Aznalfarache"),
@@ -192,69 +193,79 @@ export const localidadesData = {
     ].join(", ")
   },
   sevilla: {
-    title: "ADEKA Servicios Integrales en Sevilla Capital | Multiservicios Profesionales",
-    description: generateDescription("Sevilla"),
-    heroImage: "/imagenes/inicio2.jpg",
-    services: [
-      { title: "Porteros para Eventos", image: "/imagenes/security4.jpg", type: "porteria" },
-      { title: "Mantenimiento Integral", image: "/imagenes/mantenimiento.jpg", type: "mantenimiento" },
-      { title: "Jardinería Urbana", image: "/imagenes/jardineria4.jpg", type: "jardineria" }
-    ],
-    keywords: [
-      ...generateLocalKeywords(keywordsData.porteria, "Sevilla"),
-      ...generateLocalKeywords(keywordsData.mantenimiento, "Sevilla"),
-      ...generateLocalKeywords(keywordsData.jardineria, "Sevilla"),
-      ...keywordsData.generales,
-      "servicios para comunidades en Sevilla",
-      "empresa de mantenimiento en Sevilla capital"
-    ].join(", ")
-  },
-  'alcala-de-guadaira': {
-    title: "ADEKA Servicios Profesionales en Alcalá de Guadaíra | Auxiliares y Mantenimiento",
-    description: generateDescription("Alcalá de Guadaíra"),
-    heroImage: "/imagenes/residential.jpg",
-    services: [
-      { title: "Portería Residencial", image: "/imagenes/control.jpg", type: "porteria" },
-      { title: "Mantenimiento Industrial", image: "/imagenes/mantenimiento.jpg", type: "mantenimiento" },
-      { title: "Césped Artificial", image: "/imagenes/jardineria4.jpg", type: "jardineria" }
-    ],
-    keywords: [
-      ...generateLocalKeywords(keywordsData.porteria, "Alcalá de Guadaíra"),
-      ...generateLocalKeywords(keywordsData.mantenimiento, "Alcalá de Guadaíra"),
-      ...generateLocalKeywords(keywordsData.jardineria, "Alcalá de Guadaíra"),
-      ...keywordsData.generales
-    ].join(", ")
-  },
-  utrera: {
-    title: "ADEKA Servicios Integrales en Utrera | Auxiliares, Portería y Mantenimiento",
-    description: generateDescription("Utrera"),
-    heroImage: "/imagenes/inicio2.jpg",
-    services: [
-      { title: "Control de Accesos", image: "/imagenes/security4.jpg", type: "porteria" },
-      { title: "Mantenimiento Comunidades", image: "/imagenes/mantenimiento.jpg", type: "mantenimiento" },
-      { title: "Jardinería Económica", image: "/imagenes/jardineria4.jpg", type: "jardineria" }
-    ],
-    keywords: [
-      ...generateLocalKeywords(keywordsData.porteria, "Utrera"),
-      ...generateLocalKeywords(keywordsData.mantenimiento, "Utrera"),
-      ...generateLocalKeywords(keywordsData.jardineria, "Utrera"),
-      ...keywordsData.generales
-    ].join(", ")
-  },
-  'dos-hermanas': {
-    title: "ADEKA Servicios Profesionales en Dos Hermanas | Auxiliares y Mantenimiento",
-    description: generateDescription("Dos Hermanas"),
-    heroImage: "/imagenes/residential.jpg",
-    services: [
-      { title: "Portería 24h", image: "/imagenes/control.jpg", type: "porteria" },
-      { title: "Mantenimiento Urgente", image: "/imagenes/mantenimiento.jpg", type: "mantenimiento" },
-      { title: "Diseño de Jardines", image: "/imagenes/jardineria4.jpg", type: "jardineria" }
-    ],
-    keywords: [
-      ...generateLocalKeywords(keywordsData.porteria, "Dos Hermanas"),
-      ...generateLocalKeywords(keywordsData.mantenimiento, "Dos Hermanas"),
-      ...generateLocalKeywords(keywordsData.jardineria, "Dos Hermanas"),
-      ...keywordsData.generales
-    ].join(", ")
-  }
+  title: "Servicios Integrales en Sevilla Capital | Portería, Mantenimiento y Jardinería Profesional",
+  description: generateDescription("Sevilla"),
+  heroImage: "/imagenes/inicio2.jpg",
+  services: [
+    { title: "Porteros para Eventos", image: "/imagenes/security4.jpg", type: "porteria" },
+    { title: "Mantenimiento Integral", image: "/imagenes/mantenimiento.jpg", type: "mantenimiento" },
+    { title: "Jardinería Urbana", image: "/imagenes/jardineria4.jpg", type: "jardineria" }
+  ],
+  keywords: [
+    ...generateLocalKeywords(keywordsData.porteria, "Sevilla"),
+    ...generateLocalKeywords(keywordsData.mantenimiento, "Sevilla"),
+    ...generateLocalKeywords(keywordsData.jardineria, "Sevilla"),
+    ...keywordsData.generales,
+    "servicios para comunidades en Sevilla",
+    "empresa de mantenimiento en Sevilla capital"
+  ].join(", ")
+},
+
+'la-rinconada': {
+  title: "Portería, Mantenimiento y Jardinería en La Rinconada | Servicios Profesionales para Comunidades",
+  description: generateDescription("La Rinconada"),
+  heroImage: "/imagenes/residential.jpg",
+  services: [
+    { title: "Conserjería y Control", image: "/imagenes/control.jpg", type: "porteria" },
+    { title: "Mantenimiento Preventivo", image: "/imagenes/mantenimiento.jpg", type: "mantenimiento" },
+    { title: "Zonas Verdes y Jardines", image: "/imagenes/jardineria4.jpg", type: "jardineria" }
+  ],
+  keywords: [
+    ...generateLocalKeywords(keywordsData.porteria, "La Rinconada"),
+    ...generateLocalKeywords(keywordsData.mantenimiento, "La Rinconada"),
+    ...generateLocalKeywords(keywordsData.jardineria, "La Rinconada"),
+    ...keywordsData.generales,
+    "empresa de servicios auxiliares en La Rinconada",
+    "porteros para urbanizaciones en La Rinconada"
+  ].join(", ")
+},
+
+utrera: {
+  title: "Servicios Profesionales en Utrera | Control de Accesos, Mantenimiento y Jardinería",
+  description: generateDescription("Utrera"),
+  heroImage: "/imagenes/inicio2.jpg",
+  services: [
+    { title: "Control de Accesos", image: "/imagenes/security4.jpg", type: "porteria" },
+    { title: "Mantenimiento de Comunidades", image: "/imagenes/mantenimiento.jpg", type: "mantenimiento" },
+    { title: "Jardinería Económica", image: "/imagenes/jardineria4.jpg", type: "jardineria" }
+  ],
+  keywords: [
+    ...generateLocalKeywords(keywordsData.porteria, "Utrera"),
+    ...generateLocalKeywords(keywordsData.mantenimiento, "Utrera"),
+    ...generateLocalKeywords(keywordsData.jardineria, "Utrera"),
+    ...keywordsData.generales,
+    "empresa de mantenimiento en Utrera",
+    "servicios auxiliares en Utrera"
+  ].join(", ")
+},
+
+'dos-hermanas': {
+  title: "Auxiliares y Servicios en Dos Hermanas | Portería 24h, Mantenimiento y Jardinería",
+  description: generateDescription("Dos Hermanas"),
+  heroImage: "/imagenes/residential.jpg",
+  services: [
+    { title: "Portería 24h", image: "/imagenes/control.jpg", type: "porteria" },
+    { title: "Mantenimiento Urgente", image: "/imagenes/mantenimiento.jpg", type: "mantenimiento" },
+    { title: "Diseño de Jardines", image: "/imagenes/jardineria4.jpg", type: "jardineria" }
+  ],
+  keywords: [
+    ...generateLocalKeywords(keywordsData.porteria, "Dos Hermanas"),
+    ...generateLocalKeywords(keywordsData.mantenimiento, "Dos Hermanas"),
+    ...generateLocalKeywords(keywordsData.jardineria, "Dos Hermanas"),
+    ...keywordsData.generales,
+    "control de accesos en Dos Hermanas",
+    "empresa de servicios generales en Dos Hermanas"
+  ].join(", ")
+}
+
 };
